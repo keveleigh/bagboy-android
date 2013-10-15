@@ -6,9 +6,7 @@
     android:orientation="vertical"
     android:background="#393C44" >
 
-    
- 
-
+    <!-- feedback from logging in (successful or not) -->
     <TextView
         android:id="@+id/loginFeedback"
         android:layout_width="210dp"
@@ -17,51 +15,62 @@
         android:textColor="#ff4747"
         android:text="" />
  
-        <!--  Username Label -->
+    <!--  Username Label -->
     <TextView android:layout_width="210dp"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:textColor="#ffffff"
-                                android:layout_marginTop="30dip"
-                                android:text="username"/>
-        <EditText android:id="@+id/username"
-                        android:layout_width="210dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dip"
-                                android:layout_marginBottom="20dip"
-                                android:textColor="#000000"
-                                android:background="@android:drawable/editbox_background"
-                                android:singleLine="true"/>
-                  <!--  Password Label -->
-        <TextView android:layout_width="210dp"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:textColor="#ffffff"
-                                android:text="password"/>
-        <EditText android:id="@+id/password"
-                        android:layout_width="210dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dip"
-                                android:singleLine="true"
-                                android:textColor="#000000"
-                                android:background="@android:drawable/editbox_background"
-                                android:password="true"/>
+	    android:layout_height="wrap_content"
+	    android:textSize="20sp"
+	    android:textColor="#ffffff"
+	    android:layout_marginTop="30dip"
+	    android:text="username"/>
+    
+    <EditText android:id="@+id/username"
+    	android:layout_width="210dp"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="5dip"
+	    android:layout_marginBottom="20dip"
+	    android:textColor="#000000"
+	    android:background="@android:drawable/editbox_background"
+	    android:singleLine="true"/>
+   
+	<!--  Password Label -->
+	<TextView android:layout_width="210dp"
+		android:layout_height="wrap_content"
+		android:textSize="20sp"
+		android:textColor="#ffffff"
+		android:text="password"/>
+	
+	<EditText android:id="@+id/password"
+		android:layout_width="210dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="5dip"
+		android:singleLine="true"
+		android:textColor="#000000"
+		android:background="@android:drawable/editbox_background"
+		android:password="true"/>
 
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login" />
-        
-        <TextView android:id="@+id/link_to_register"
-            android:layout_width="210dp"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="#ffffff"
-            android:layout_marginTop="40dip"
-                android:layout_marginBottom="40dip"
-                android:gravity="center"
-                android:text="register"/>
+	<!-- login button -->
+	<Button
+	    android:id="@+id/loginButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Login" />
+	
+	<!-- button for new users to register -->
+		<Button
+	    android:id="@+id/registerButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Register" />
+	
+	<!--  TextView android:id="@+id/link_to_register"
+		android:layout_width="210dp"
+		android:layout_height="wrap_content"
+		android:textSize="18sp"
+		android:textColor="#ffffff"
+		android:layout_marginTop="40dip"
+		android:layout_marginBottom="40dip"
+		android:gravity="center"
+		android:text="register"/> -->
             
 
 </LinearLayout>
