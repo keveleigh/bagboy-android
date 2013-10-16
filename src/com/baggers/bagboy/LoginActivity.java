@@ -22,9 +22,10 @@ public class LoginActivity extends Activity{
         
         Button loginButton = (Button) findViewById(R.id.loginButton);
         Button registerButton = (Button) findViewById(R.id.registerButton);
+        
         //Sets listener for login button. 
         loginButton.setOnClickListener(
-	        
+	           
         		new View.OnClickListener() {
 	                
 	                
@@ -43,8 +44,14 @@ public class LoginActivity extends Activity{
                         //1. invalid user name/password
                         //2. correct user name/password in which case it goes to the home screen 
                         
-                        Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-                    	startActivity(i); 
+                        //check userID and password
+                        if (LoginManager.checkLogin(username, password)) {
+	                        Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+	                    	startActivity(i); 
+                        }
+                        else {
+                        	//message stating that the username password are incorrect
+                        }
               
                 }
         		});
@@ -57,7 +64,7 @@ public class LoginActivity extends Activity{
                 public void onClick(View v) {
                 	
                 	//takes the user to the register screen
-                	Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                	Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
                 	startActivity(i);
                      
                 }
