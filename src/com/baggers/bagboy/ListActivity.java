@@ -18,6 +18,7 @@ public class ListActivity extends Activity{
         setContentView(R.layout.activity_list);
         
        
+       
     }
     
 }

@@ -16,9 +16,7 @@ public class LoginActivity extends Activity{
         // set default screen to login GUI
         setContentView(R.layout.activity_login);
         
-        
-        //TextView registerScreen = (TextView) findViewById(R.id.link_to_register);
-        //final TextView loginFeedbackMessage = (TextView)findViewById(R.id.loginFeedback);
+
         
         Button loginButton = (Button) findViewById(R.id.loginButton);
         Button registerButton = (Button) findViewById(R.id.registerButton);
@@ -51,6 +49,7 @@ public class LoginActivity extends Activity{
                         }
                         else {
                         	//message stating that the username password are incorrect
+                        	LoginManager.getError();
                         }
               
                 }

@@ -31,4 +31,12 @@ public class DatabaseConnection {
 		//return true if it is
 		return false;
 	}
+	
+	public void createList() {
+		//db code to create a new list in the list table 
+	}
+	
+	public void addToList(String list, String newProduct) {
+		//db code to add new product the list 
+	}
 }

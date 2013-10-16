@@ -5,6 +5,8 @@ public class LoginManager {
 	private static String currUserEmail;
 	private static String currUserPassword;
 	private static DatabaseConnection db = new DatabaseConnection();
+	//the error message to be returned
+	private static String error = "";
 	
 	//variable to say that there is a current user logged into the app
 	private static boolean loggedIn = false;
@@ -41,6 +43,10 @@ public class LoginManager {
 		
 		//to make the compiler happy until we finish implementation
 		return true;
+	}
+	
+	public static String getError() {
+		return error;
 	}
 	
 
