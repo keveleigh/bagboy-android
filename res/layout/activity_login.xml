@@ -5,15 +5,6 @@
     android:gravity = "center"
     android:orientation="vertical"
     android:background="#393C44" >
-
-    <!-- feedback from logging in (successful or not) -->
-    <TextView
-        android:id="@+id/loginFeedback"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="#ff4747"
-        android:text="" />
  
     <!--  Username Label -->
     <TextView android:layout_width="210dp"
@@ -23,6 +14,7 @@
 	    android:layout_marginTop="30dip"
 	    android:text="username"/>
     
+    <!-- Username text field to edit -->
     <EditText android:id="@+id/username"
     	android:layout_width="210dp"
 	    android:layout_height="wrap_content"
@@ -39,6 +31,7 @@
 		android:textColor="#ffffff"
 		android:text="password"/>
 	
+	<!-- password text field to edit -->
 	<EditText android:id="@+id/password"
 		android:layout_width="210dp"
 		android:layout_height="wrap_content"
@@ -62,15 +55,6 @@
 	    android:layout_height="wrap_content"
 	    android:text="Register" />
 	
-	<!--  TextView android:id="@+id/link_to_register"
-		android:layout_width="210dp"
-		android:layout_height="wrap_content"
-		android:textSize="18sp"
-		android:textColor="#ffffff"
-		android:layout_marginTop="40dip"
-		android:layout_marginBottom="40dip"
-		android:gravity="center"
-		android:text="register"/> -->
             
 
 </LinearLayout>

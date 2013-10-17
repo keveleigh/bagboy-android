@@ -18,7 +18,7 @@ public class RegisterActivity extends Activity{
         
         Button registerButton = (Button) findViewById(R.id.registerButton);
         
-        //Sets listener for login button. 
+        //Sets listener for register button 
         registerButton.setOnClickListener(
 	           
         		new View.OnClickListener() {

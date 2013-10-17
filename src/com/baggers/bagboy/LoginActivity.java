@@ -21,7 +21,7 @@ public class LoginActivity extends Activity{
         Button loginButton = (Button) findViewById(R.id.loginButton);
         Button registerButton = (Button) findViewById(R.id.registerButton);
         
-        //Sets listener for login button. 
+        //Sets listener for login button 
         loginButton.setOnClickListener(
 	           
         		new View.OnClickListener() {

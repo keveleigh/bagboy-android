@@ -5,15 +5,13 @@
     android:gravity = "center"
     android:orientation="vertical"
     android:background="#393C44" >
- 
-    <!-- this will be the list screen -->
+
+        <!-- this will be the route screen -->
     <TextView android:layout_width="210dp"
 	    android:layout_height="wrap_content"
 	    android:textSize="20sp"
 	    android:textColor="#ffffff"
 	    android:layout_marginTop="30dip"
-	    android:text="THIS IS THE LIST SCREEN"/>
-
-
+	    android:text="THIS IS THE ROUTE SCREEN"/>
 
 </LinearLayout>
