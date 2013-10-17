@@ -62,7 +62,7 @@ public class DatabaseConnection {
 		return false;
 	}
 	
-	public void createList() {
+	public void createList(String currUser, String listName) {
 		//db code to create a new list in the list table 
 	}
 	
@@ -79,6 +79,8 @@ public class DatabaseConnection {
 	public ArrayList<String> loadStores() {
 		ArrayList<String> stores = new ArrayList<String>();
 		//db code to get all the list names associated with a username
+		stores.add("Kroger");
+		stores.add("Publix");
 		return stores;
 	}
 }

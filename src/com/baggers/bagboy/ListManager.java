@@ -13,8 +13,9 @@ public class ListManager {
 		
 	}
 	
-	public static void createList() {
-		db.createList();
+	public static void createList(String listName) {
+		String currUser = LoginManager.currUserEmail;
+		db.createList(currUser, listName);
 	}
 	
 	public static void addToList(String newProduct) {
