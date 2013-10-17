@@ -31,7 +31,7 @@ public class HomeActivity extends Activity{
 
     	});
         
-        /*coldCheck.setOnClickListener(
+        coldCheck.setOnClickListener(
         	new OnClickListener() {
 
 				@Override
@@ -40,7 +40,7 @@ public class HomeActivity extends Activity{
 					
 				}
         	
-        });*/
+        });
     }
     
 }
