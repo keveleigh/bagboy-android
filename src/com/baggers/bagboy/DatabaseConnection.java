@@ -53,7 +53,20 @@ public class DatabaseConnection {
 	public void registerUser(String email, String password) {
 		
 		//put in a new user with that email and password
-		
+		Connection c = null;
+		Statement stmt = null;
+
+		try {
+			c = DriverManager.getConnection(
+					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"australia3");
+			stmt = c.createStatement();
+			String sql = "insert into users (user_id, user_email, password)"
+					+ "values (3,'" + email + "','" + password + "');";
+			stmt.execute(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public boolean checkEmail(String email) {
