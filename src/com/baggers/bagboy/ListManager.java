@@ -29,6 +29,7 @@ public class ListManager {
 	
 	public static ArrayList<String> loadStores() {
 		//gets all the stores
+	
 		return db.loadStores();
 	}
 	

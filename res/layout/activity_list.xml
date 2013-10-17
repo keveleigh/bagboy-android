@@ -14,6 +14,11 @@
 	    android:layout_marginTop="30dip"
 	    android:text="THIS IS THE LIST SCREEN"/>
 
+    <!-- drop down menu for store -->
+    <Spinner
+    android:id="@+id/storeSpinner"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
 
 
 </LinearLayout>
