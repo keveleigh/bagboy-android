@@ -12,7 +12,30 @@ public class DatabaseConnection {
 		//db code to check if the email and password are in the database
 		if (email == null || password == null)
 			return false;
-		
+		Connection c = null;
+		ResultSet rs = null;
+		PreparedStatement pst = null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			c = DriverManager.getConnection(
+					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"australia3");
+			pst = c.prepareStatement("SELECT * FROM USERS ;");
+			rs = pst.executeQuery();
+			while (rs.next()) {
+				if (rs.getString("user_email").equals(email)
+						&& rs.getString("password").equals(password)) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		// //////end of db code
 		if (email.equals("test") && password.equals("test"))
 			return true;
 		else
