@@ -72,6 +72,28 @@ public class DatabaseConnection {
 	public boolean checkEmail(String email) {
 		//check to see if that email is already in the database
 		//return true if it is
+		Connection c = null;
+		ResultSet rs = null;
+		PreparedStatement pst = null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			c = DriverManager.getConnection(
+					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"australia3");
+			pst = c.prepareStatement("SELECT * FROM USERS ;");
+			rs = pst.executeQuery();
+			while (rs.next()) {
+				if (rs.getString("user_email").equals(email)) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 	
