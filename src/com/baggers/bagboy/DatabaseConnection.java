@@ -1,5 +1,7 @@
 package com.baggers.bagboy;
 
+import java.util.ArrayList;
+
 public class DatabaseConnection {
 
 	public DatabaseConnection() {
@@ -38,5 +40,17 @@ public class DatabaseConnection {
 	
 	public void addToList(String list, String newProduct) {
 		//db code to add new product the list 
+	}
+	
+	public ArrayList<String> loadLists (String username) {
+		ArrayList<String> lists = new ArrayList<String>();
+		//db code to get all the list names associated with a username
+		return lists;
+	}
+	
+	public ArrayList<String> loadStores() {
+		ArrayList<String> stores = new ArrayList<String>();
+		//db code to get all the list names associated with a username
+		return stores;
 	}
 }

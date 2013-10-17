@@ -17,7 +17,8 @@ public class ListActivity extends Activity{
         // set default screen to login GUI
         setContentView(R.layout.activity_list);
         
-       
+       //sets up all the drop downs with values that are set in the activities from home 
+        //http://developer.android.com/guide/topics/ui/controls/spinner.html
        
     }
     

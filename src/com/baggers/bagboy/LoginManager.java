@@ -2,11 +2,11 @@ package com.baggers.bagboy;
 
 public class LoginManager {
 	
-	private static String currUserEmail;
-	private static String currUserPassword;
-	private static DatabaseConnection db = new DatabaseConnection();
+	static String currUserEmail;
+	static String currUserPassword;
+	static DatabaseConnection db = new DatabaseConnection();
 	//the error message to be returned
-	private static String error = "";
+	static String error = "";
 	
 	//variable to say that there is a current user logged into the app
 	private static boolean loggedIn = false;

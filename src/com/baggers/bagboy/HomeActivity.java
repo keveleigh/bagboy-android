@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class HomeActivity extends Activity{
 
@@ -19,6 +19,7 @@ public class HomeActivity extends Activity{
         
         //need to figure out what buttons go on the home screen 
         Button createList = (Button) findViewById(R.id.createList);
+        CheckBox coldCheck = (CheckBox) findViewById(R.id.coldCheck);
         
         createList.setOnClickListener(
         		new OnClickListener() {
@@ -29,6 +30,17 @@ public class HomeActivity extends Activity{
         			}    			
 
     	});
+        
+        coldCheck.setOnClickListener(
+        	new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+	    			//set some sort of variable to make items cold
+					
+				}
+        	
+        });
     }
     
 }

@@ -21,4 +21,11 @@
 	    android:layout_height="wrap_content"
 	    android:text="Create List" />
 
+	<CheckBox
+        android:id="@+id/coldCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get cold items last"
+        android:checked="false" />
+
 </LinearLayout>

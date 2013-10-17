@@ -1,12 +1,8 @@
 package com.baggers.bagboy;
+import java.util.ArrayList;
+
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 public class MyListActivity extends Activity{
 
@@ -16,7 +12,11 @@ public class MyListActivity extends Activity{
         
         // set default screen to login GUI
         setContentView(R.layout.activity_mylist);
-
+        
+        //loads all the list
+        ArrayList<String> lists = ListManager.loadLists();
+        
+        //TODO: figure out how to display all the loaded lists and make them clickable
     }
     
 }

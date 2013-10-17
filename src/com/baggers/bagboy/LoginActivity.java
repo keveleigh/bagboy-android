@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity{
 
@@ -50,6 +51,9 @@ public class LoginActivity extends Activity{
                         else {
                         	//message stating that the username password are incorrect
                         	LoginManager.getError();
+                        	
+                        	//TODO: error messages 
+                        	//Toast.makeText(HomeActivity.this, "Yay box checked", Toast.LENGTH_LONG).show();
                         }
               
                 }
