@@ -99,7 +99,22 @@ public class DatabaseConnection {
 	}
 	
 	public void createList(String currUser, String listName) {
-		//db code to create a new list in the list table 
+		//db code to create a new list in the list table
+		Connection c = null;
+		Statement stmt = null;
+
+		try {
+			c = DriverManager.getConnection(
+					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"australia3");
+			stmt = c.createStatement();
+			String sql = "insert into lists (list_id, list_name, user_email)"
+					+ "values (3,'" + list_name + "','" + currUser + "');";
+			stmt.execute(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	}
 	
 	public void addToList(String list, String newProduct) {
