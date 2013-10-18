@@ -115,7 +115,6 @@ public class DatabaseConnection {
 			e.printStackTrace();
 		}
 	}
-	}
 	
 	public void addToList(String list, String newProduct) {
 		//db code to add new product the list 

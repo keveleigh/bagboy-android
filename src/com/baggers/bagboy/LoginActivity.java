@@ -15,11 +15,11 @@ public class LoginActivity extends Activity{
     	
         super.onCreate(savedInstanceState);
         
+        // Removes title bar - must keep ABOVE setContentView
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        
         // set default screen to login GUI
         setContentView(R.layout.activity_login);
-        
-      //Remove title bar
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         
         Button loginButton = (Button) findViewById(R.id.loginButton);
