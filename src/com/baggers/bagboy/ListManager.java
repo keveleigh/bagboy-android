@@ -7,6 +7,8 @@ public class ListManager {
 	static String currListName;
 	static ArrayList<String> currProductList;
 	static String currStore;
+	static String currCategory;
+	static String currItem;
 	static DatabaseConnection db = new DatabaseConnection();
 	
 	public ListManager() {
@@ -33,5 +35,15 @@ public class ListManager {
 	
 		return db.loadStores();
 	}
+	
+	public static ArrayList<String> loadCategories() {
+		return db.loadCategories();
+	}
+	
+	public static ArrayList<String> loadItems (String categoryName) {
+		return db.loadItems(categoryName);
+	}
+	
+	
 	
 }
