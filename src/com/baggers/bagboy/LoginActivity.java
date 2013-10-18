@@ -3,6 +3,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,6 +18,8 @@ public class LoginActivity extends Activity{
         // set default screen to login GUI
         setContentView(R.layout.activity_login);
         
+      //Remove title bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         
         Button loginButton = (Button) findViewById(R.id.loginButton);

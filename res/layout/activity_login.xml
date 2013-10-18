@@ -1,60 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity = "center"
-    android:orientation="vertical"
-    android:background="#393C44" >
- 
-    <!--  Username Label -->
-    <TextView android:layout_width="210dp"
-	    android:layout_height="wrap_content"
-	    android:textSize="20sp"
-	    android:textColor="#ffffff"
-	    android:layout_marginTop="30dip"
-	    android:text="username"/>
-    
+    android:background="#29348D"
+    android:gravity="center" >
+
+    <!-- Username Label -->
+
+
     <!-- Username text field to edit -->
-    <EditText android:id="@+id/username"
-    	android:layout_width="210dp"
-	    android:layout_height="wrap_content"
-	    android:layout_marginTop="5dip"
-	    android:layout_marginBottom="20dip"
-	    android:textColor="#000000"
-	    android:background="@android:drawable/editbox_background"
-	    android:singleLine="true"/>
-   
-	<!--  Password Label -->
-	<TextView android:layout_width="210dp"
-		android:layout_height="wrap_content"
-		android:textSize="20sp"
-		android:textColor="#ffffff"
-		android:text="password"/>
-	
-	<!-- password text field to edit -->
-	<EditText android:id="@+id/password"
-		android:layout_width="210dp"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="5dip"
-		android:singleLine="true"
-		android:textColor="#000000"
-		android:background="@android:drawable/editbox_background"
-		android:password="true"/>
 
-	<!-- login button -->
-	<Button
-	    android:id="@+id/loginButton"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="Login" />
-	
-	<!-- button for new users to register -->
-		<Button
-	    android:id="@+id/registerButton"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="Register" />
-	
-            
 
-</LinearLayout>
+    <!-- Password Label -->
+
+
+    <!-- password text field to edit -->
+
+
+    <!-- login button -->
+
+
+    <!-- button for new users to register -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="5dp"
+                android:text="Email"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:drawable/editbox_background"
+                android:singleLine="true"
+                android:textColor="#000000" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Password"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:drawable/editbox_background"
+                android:ems="10"
+                android:password="true"
+                android:singleLine="true"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/linearLayout3"
+        android:layout_alignTop="@+id/linearLayout3"
+        android:layout_marginTop="78dp"
+        android:textColor="#FFFFFF"
+        android:text="Login" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="294dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_centerHorizontal="true"
+        android:text="Don&apos;t have an account? Simplify shopping and sign up today!"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:text="Register" />
+
+</RelativeLayout>
