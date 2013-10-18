@@ -20,23 +20,19 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" />
     
-    <!-- drop down menu for store -->
+    <!-- drop down menu for category -->
     <Spinner
-    android:id="@+id/storeSpinner"
+    android:id="@+id/categorySpinner"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" />
     
-    <!-- drop down menu for store -->
+    <!-- drop down menu for item -->
     <Spinner
-    android:id="@+id/storeSpinner"
+    android:id="@+id/itemSpinner"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" />
     
-    <!-- drop down menu for store -->
-    <Spinner
-    android:id="@+id/storeSpinner"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" />
+
 
 
 </LinearLayout>

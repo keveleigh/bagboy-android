@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class DatabaseConnection {
@@ -117,5 +118,19 @@ public class DatabaseConnection {
 		stores.add("Kroger");
 		stores.add("Publix");
 		return stores;
+	}
+	
+	public static ArrayList<String> loadCategories() {
+		ArrayList<String> categories = new ArrayList<String>();
+		//db code to return an array list of all categories
+		
+		return categories;
+	}
+	
+	public static ArrayList<String> loadItems (String categoryName) {
+		ArrayList<String> items = new ArrayList<String>();
+		//db code to return an array list of all items in a category
+		
+		return items;
 	}
 }
