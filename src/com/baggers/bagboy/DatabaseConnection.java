@@ -109,7 +109,7 @@ public class DatabaseConnection {
 					"australia3");
 			stmt = c.createStatement();
 			String sql = "insert into lists (list_id, list_name, user_email)"
-					+ "values (3,'" + list_name + "','" + currUser + "');";
+					+ "values (3,'" + listName + "','" + currUser + "');";
 			stmt.execute(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
