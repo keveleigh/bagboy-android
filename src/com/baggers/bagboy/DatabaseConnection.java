@@ -99,11 +99,70 @@ public class DatabaseConnection {
 	}
 	 
 	public void createList(String currUser, String listName) {
-		//db code to create a new list in the list table 
+		//db code to create a new list in the list table
+		Connection c = null;
+		Statement stmt = null;
+
+		try {
+			c = DriverManager.getConnection(
+					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"australia3");
+			stmt = c.createStatement();
+			String sql = "insert into lists (list_id, list_name, user_email)"
+					+ "values (3,'" + list_name + "','" + currUser + "');";
+			stmt.execute(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	}
 	
 	public void addToList(String list, String newProduct) {
 		//db code to add new product the list 
+		ResultSet rs2 = null;
+		ResultSet rs3 = null;
+		PreparedStatement pst2 = null;
+		PreparedStatement pst3 = null;
+		int productId = 0;
+		int listId = 0;
+		Statement stmt2 = null;
+		
+		try {
+			Class.forName("org.postgresql.Driver");
+			c = DriverManager.getConnection(
+					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"australia3");
+			pst2 = c.prepareStatement("select product_id from products where product_name = '"
+					+ prod + "');");
+			rs2 = pst2.executeQuery();
+			while (rs2.next()) {
+				if (rs2.getString("product_name").equals(prod)) {
+					productId = rs2.getInt("product_id");
+					break;
+				}
+			}
+			pst3 = c.prepareStatement("select product_id from products where product_name = '"
+					+ prod + "');");
+			rs3 = pst3.executeQuery();
+			while (rs3.next()) {
+				if (rs3.getString("product_name").equals(prod)) {
+					productId = rs3.getInt("product_id");
+					break;
+				}
+			}
+			
+			stmt2 = c.createStatement();
+			String sql2 = "insert into lists (list_id, list_name, user_email)"
+					+ "values ("+listId+"'"+list+"','" +currUser+"');";
+			stmt2.execute(sql2);
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public ArrayList<String> loadLists (String username) {
