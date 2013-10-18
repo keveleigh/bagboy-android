@@ -23,12 +23,14 @@ public class ListActivity extends Activity{
        Spinner spinner1 = (Spinner) findViewById(R.id.categorySpinner);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadCategories());
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter1);
+        spinner1.setAdapter(adapter1);
         
-        /*Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItems(ListManager.currCategory));
+        Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItemsFromCategory(ListManager.currCategory));
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter2);*/
+        spinner2.setAdapter(adapter2);
+        
+        //TODO: make spinners update content based on other spinners
        
     }
     

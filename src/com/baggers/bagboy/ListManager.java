@@ -40,8 +40,8 @@ public class ListManager {
 		return db.loadCategories();
 	}
 	
-	public static ArrayList<String> loadItems (String categoryName) {
-		return db.loadItems(categoryName);
+	public static ArrayList<String> loadItemsFromCategory (String categoryName) {
+		return db.loadItemsFromCategory(categoryName);
 	}
 	
 	

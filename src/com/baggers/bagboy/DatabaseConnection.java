@@ -187,9 +187,29 @@ public class DatabaseConnection {
 		return categories;
 	}
 	
-	public static ArrayList<String> loadItems (String categoryName) {
+	public static ArrayList<String> loadItemsFromCategory (String categoryName) {
 		ArrayList<String> items = new ArrayList<String>();
 		//db code to return an array list of all items in a category
+		
+		return items;
+	}
+	
+	public static int getAisle (String category) {
+		//db code to get the aisle of a category
+		//maybe with a given store - need to figure this out 
+	
+		return 0;
+	}
+	
+	public static boolean isCold (String productName) {
+		
+		//db code to see whether a product is cold 
+		return false;
+	}
+	
+	public static ArrayList<String> loadItemsFromList (String listName) {
+		ArrayList<String> items = new ArrayList<String>();
+		//db code to return an array list of all items in a list
 		
 		return items;
 	}
