@@ -21,13 +21,55 @@
 
 
     <!-- button for new users to register -->
+	<ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/bag_boy_logo_white" />
+	
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/linearLayout3"
+        android:layout_alignTop="@+id/linearLayout3"
+        android:layout_marginTop="78dp"
+        android:textColor="#FFFFFF"
+        android:text="Login" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="294dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:text="Don&apos;t have an account? Simplify shopping and sign up today!"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:text="Register" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="130dp"
+        android:layout_below="@id/imageView1"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -51,10 +93,7 @@
                 android:layout_weight="1"
                 android:background="@android:drawable/editbox_background"
                 android:singleLine="true"
-                android:textColor="#000000" >
-
-                <requestFocus />
-            </EditText>
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,34 +122,5 @@
                 android:textColor="#000000" />
         </LinearLayout>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/linearLayout3"
-        android:layout_alignTop="@+id/linearLayout3"
-        android:layout_marginTop="78dp"
-        android:textColor="#FFFFFF"
-        android:text="Login" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="294dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout3"
-        android:layout_centerHorizontal="true"
-        android:text="Don&apos;t have an account? Simplify shopping and sign up today!"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
-        android:text="Register" />
 
 </RelativeLayout>
