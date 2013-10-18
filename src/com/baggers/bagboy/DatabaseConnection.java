@@ -97,7 +97,7 @@ public class DatabaseConnection {
 		}
 		return false;
 	}
-	
+	 
 	public void createList(String currUser, String listName) {
 		//db code to create a new list in the list table 
 	}
@@ -114,7 +114,7 @@ public class DatabaseConnection {
 	
 	public ArrayList<String> loadStores() {
 		ArrayList<String> stores = new ArrayList<String>();
-		//db code to get all the list names associated with a username
+		//db code to get all the stores
 		stores.add("Kroger");
 		stores.add("Publix");
 		return stores;
@@ -123,7 +123,9 @@ public class DatabaseConnection {
 	public static ArrayList<String> loadCategories() {
 		ArrayList<String> categories = new ArrayList<String>();
 		//db code to return an array list of all categories
-		
+		categories.add("cookies");
+		categories.add("chips");
+		categories.add("soda");
 		return categories;
 	}
 	

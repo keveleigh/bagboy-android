@@ -20,15 +20,15 @@ public class ListActivity extends Activity{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         
-        Spinner spinner1 = (Spinner) findViewById(R.id.categorySpinner);
+       Spinner spinner1 = (Spinner) findViewById(R.id.categorySpinner);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadCategories());
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter1);
         
-        Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
+        /*Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItems(ListManager.currCategory));
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter2);
+        spinner.setAdapter(adapter2);*/
        
     }
     
