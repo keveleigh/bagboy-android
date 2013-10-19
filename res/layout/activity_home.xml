@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity = "center"
-    android:orientation="vertical"
-    android:background="#393C44" >
+    android:background="#29348D"
+    android:gravity="center_horizontal" >
  
     <!-- this will be the home screen -->
-    <TextView android:layout_width="210dp"
-	    android:layout_height="wrap_content"
-	    android:textSize="20sp"
-	    android:textColor="#ffffff"
-	    android:layout_marginTop="30dip"
-	    android:text="THIS IS THE HOME SCREEN"/>
 
     <!-- button to create a list -->
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bag_boy_logo_white" />
+
 	<Button
 	    android:id="@+id/createList"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:text="Create List" />
+	    android:layout_below="@+id/imageView1"
+	    android:layout_centerHorizontal="true"
+	    android:textColor="#FFFFFF"
+	    android:text="Create a List" />
 
-	<CheckBox
-        android:id="@+id/coldCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get cold items last"
-        android:checked="false" />
+	<TextView
+	    android:id="@+id/textView1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_centerVertical="true"
+	    android:text="This is where the tabs go"
+	    android:textAppearance="?android:attr/textAppearanceMedium"
+	    android:textColor="#FFFFFF" />
 
-</LinearLayout>
+</RelativeLayout>

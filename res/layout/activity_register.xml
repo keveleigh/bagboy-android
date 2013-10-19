@@ -4,16 +4,29 @@
     android:layout_height="fill_parent"
     android:gravity = "center"
     android:orientation="vertical"
-    android:background="#393C44" >
+    android:background="#29348D" >
  
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bag_boy_logo_white" />
+    
     <!--  Username Label -->
-    <TextView android:layout_width="210dp"
-	    android:layout_height="wrap_content"
-	    android:textSize="20sp"
-	    android:textColor="#ffffff"
-	    android:layout_marginTop="30dip"
-	    android:text="username"/>
+
+    <TextView
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:text="Email"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
     
     <!-- user name text field to edit -->
     <EditText android:id="@+id/username"
@@ -26,11 +39,13 @@
 	    android:singleLine="true"/>
    
 	<!--  Password Label -->
-	<TextView android:layout_width="210dp"
-		android:layout_height="wrap_content"
-		android:textSize="20sp"
-		android:textColor="#ffffff"
-		android:text="password"/>
+
+	<TextView
+	    android:layout_width="210dp"
+	    android:layout_height="wrap_content"
+	    android:text="Password"
+	    android:textColor="#ffffff"
+	    android:textSize="20sp" />
 	
 	<!-- password text field to edit -->
 	<EditText android:id="@+id/password"
@@ -43,27 +58,32 @@
 		android:password="true"/>
 	
 		<!--  Password Confirm Label -->
-	<TextView android:layout_width="210dp"
-		android:layout_height="wrap_content"
-		android:textSize="20sp"
-		android:textColor="#ffffff"
-		android:text="Confirm password"/>
+
+	<TextView
+	    android:layout_width="210dp"
+	    android:layout_height="wrap_content"
+	    android:text="Confirm Password"
+	    android:textColor="#ffffff"
+	    android:textSize="20sp" />
 	
 	<!-- password confirm text field to edit -->
 	<EditText android:id="@+id/passwordConfirm"
 		android:layout_width="210dp"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="5dip"
+		android:layout_marginTop="5dp"
+		android:layout_marginBottom="10dp"
 		android:singleLine="true"
 		android:textColor="#000000"
 		android:background="@android:drawable/editbox_background"
 		android:password="true"/>
 
 	<!-- login button -->
+
 	<Button
 	    android:id="@+id/registerButton"
-	    android:layout_width="wrap_content"
+	    android:layout_width="102dp"
 	    android:layout_height="wrap_content"
-	    android:text="Done" />
+	    android:text="Done"
+	    android:textColor="#FFFFFF" />
 
 </LinearLayout>

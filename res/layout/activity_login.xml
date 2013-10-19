@@ -33,16 +33,6 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:src="@drawable/bag_boy_logo_white" />
-	
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/linearLayout3"
-        android:layout_alignTop="@+id/linearLayout3"
-        android:layout_marginTop="78dp"
-        android:textColor="#FFFFFF"
-        android:text="Login" />
 
     <TextView
         android:id="@+id/textView2"
@@ -68,9 +58,11 @@
         android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/imageView1"
-        android:orientation="vertical" >
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
 
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -122,5 +114,15 @@
                 android:textColor="#000000" />
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_toRightOf="@+id/registerButton"
+        android:text="Login"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

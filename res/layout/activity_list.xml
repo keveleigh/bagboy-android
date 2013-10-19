@@ -4,15 +4,31 @@
     android:layout_height="fill_parent"
     android:gravity = "center"
     android:orientation="vertical"
-    android:background="#393C44" >
+    android:background="#E4E3E8" >
  
     <!-- this will be the list screen -->
-    <TextView android:layout_width="210dp"
-	    android:layout_height="wrap_content"
-	    android:textSize="20sp"
-	    android:textColor="#ffffff"
-	    android:layout_marginTop="30dip"
-	    android:text="THIS IS THE LIST SCREEN"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:text="Your Store"
+        android:textColor="#737373"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/coldCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick up cold items last" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:text="Your List"
+        android:textColor="#737373"
+        android:textSize="20sp" />
 
     <!-- drop down menu for store -->
     <Spinner
@@ -31,8 +47,15 @@
     android:id="@+id/itemSpinner"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" />
-    
 
-
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#29348D"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Find Route"
+        android:textColor="#FFFFFF" />
 
 </LinearLayout>
