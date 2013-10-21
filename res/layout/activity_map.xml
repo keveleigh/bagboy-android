@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:gravity = "center"
     android:orientation="vertical"
-    android:background="#393C44" >
+    android:background="#29348D" >
 
     <!-- this will be the map screen -->
     <TextView android:layout_width="210dp"
