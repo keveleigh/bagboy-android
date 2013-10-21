@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class RegisterActivity extends Activity{
 
@@ -51,7 +52,7 @@ public class RegisterActivity extends Activity{
 	                    	startActivity(i); 
                         }
                         else {
-                        	//message stating something went wrong 
+                        	Toast.makeText(RegisterActivity.this, "Register failed", Toast.LENGTH_LONG).show();
                         }
               
                 }

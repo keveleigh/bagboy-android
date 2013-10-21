@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity{
 
@@ -54,7 +55,7 @@ public class LoginActivity extends Activity{
                         	LoginManager.getError();
                         	
                         	//TODO: error messages 
-                        	//Toast.makeText(HomeActivity.this, "Yay box checked", Toast.LENGTH_LONG).show();
+                        	Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_LONG).show();
                         }
               
                 }
