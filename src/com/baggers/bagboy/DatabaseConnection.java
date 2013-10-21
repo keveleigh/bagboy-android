@@ -26,11 +26,13 @@ public class DatabaseConnection {
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager.getConnection(
-					"jdbc:postgresql://128.61.57.241:5432/bagboy", "postgres",
+					"jdbc:postgresql://128.61.57.241:8080/bagboy", "postgres",
 					"australia3");
 			pst = c.prepareStatement("SELECT * FROM USERS ;");
 			rs = pst.executeQuery();
+			System.out.println("try");
 			while (rs.next()) {
+				System.out.println("while");
 				if (rs.getString("user_email").equals(email)
 						&& rs.getString("password").equals(password)) {
 					System.out.println("true");
@@ -41,8 +43,10 @@ public class DatabaseConnection {
 				}
 			}
 		} catch (SQLException e) {
+			System.out.println("sql exception");
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
+			System.out.println("class not found");
 			e.printStackTrace();
 		}
 		// //////end of db code
