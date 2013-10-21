@@ -42,7 +42,7 @@ public class DatabaseConnection {
 			e.printStackTrace();
 		}
 		// //////end of db code
-		//if the user is in the database return true, else return false
+		return false;
 
 	}
 	
