@@ -33,7 +33,7 @@ public class DatabaseConnection {
 			while (rs.next()) {
 				if (rs.getString("user_email").equals(email)
 						&& rs.getString("password").equals(password)) {
-					System.out.println("true")
+					System.out.println("true");
 					return true;
 				} else {
 					System.out.println("false");
