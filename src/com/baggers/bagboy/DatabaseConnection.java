@@ -24,7 +24,7 @@ public class DatabaseConnection {
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager.getConnection(
-					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"jdbc:postgresql://128.61.57.241/:5432/bagboy", "postgres",
 					"australia3");
 			pst = c.prepareStatement("SELECT * FROM USERS ;");
 			rs = pst.executeQuery();
@@ -42,11 +42,6 @@ public class DatabaseConnection {
 			e.printStackTrace();
 		}
 		// //////end of db code
-		if (email.equals("test") && password.equals("test"))
-			return true;
-		else
-			return false;
-		
 		//if the user is in the database return true, else return false
 
 	}
@@ -59,11 +54,11 @@ public class DatabaseConnection {
 
 		try {
 			c = DriverManager.getConnection(
-					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"jdbc:postgresql://128.61.57.241:5432/bagboy", "postgres",
 					"australia3");
 			stmt = c.createStatement();
 			String sql = "insert into users (user_id, user_email, password)"
-					+ "values (3,'" + email + "','" + password + "');";
+					+ "values (DEFAULT,'" + email + "','" + password + "');";
 			stmt.execute(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -79,7 +74,7 @@ public class DatabaseConnection {
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager.getConnection(
-					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"jdbc:postgresql://128.61.57.241:5432/bagboy", "postgres",
 					"australia3");
 			pst = c.prepareStatement("SELECT * FROM USERS ;");
 			rs = pst.executeQuery();
@@ -105,7 +100,7 @@ public class DatabaseConnection {
 
 		try {
 			c = DriverManager.getConnection(
-					"jdbc:postgresql://localhost:5432/bagboy", "postgres",
+					"jdbc:postgresql://128.61.57.241:5432/bagboy", "postgres",
 					"australia3");
 			stmt = c.createStatement();
 			String sql = "insert into lists (list_id, list_name, user_email)"
