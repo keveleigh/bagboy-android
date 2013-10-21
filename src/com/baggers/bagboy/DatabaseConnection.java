@@ -16,8 +16,10 @@ public class DatabaseConnection {
 	
 	public boolean checkLogin(String email, String password) {
 		//db code to check if the email and password are in the database
-		if (email == null || password == null)
+		if (email == null || password == null) {
+			System.out.println("false");
 			return false;
+		}
 		Connection c = null;
 		ResultSet rs = null;
 		PreparedStatement pst = null;
@@ -31,8 +33,10 @@ public class DatabaseConnection {
 			while (rs.next()) {
 				if (rs.getString("user_email").equals(email)
 						&& rs.getString("password").equals(password)) {
+					System.out.println("true")
 					return true;
 				} else {
+					System.out.println("false");
 					return false;
 				}
 			}
@@ -42,6 +46,7 @@ public class DatabaseConnection {
 			e.printStackTrace();
 		}
 		// //////end of db code
+		System.out.println("false");
 		return false;
 
 	}
