@@ -26,7 +26,7 @@ public class DatabaseConnection {
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager.getConnection(
-					"jdbc:postgresql://128.61.57.241/:5432/bagboy", "postgres",
+					"jdbc:postgresql://128.61.57.241:5432/bagboy", "postgres",
 					"australia3");
 			pst = c.prepareStatement("SELECT * FROM USERS ;");
 			rs = pst.executeQuery();
