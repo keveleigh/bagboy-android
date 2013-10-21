@@ -17,7 +17,7 @@ public class DatabaseConnection {
 	public boolean checkLogin(String email, String password) {
 		//db code to check if the email and password are in the database
 		if (email == null || password == null) {
-			System.out.println("false");
+			System.out.println("false1");
 			return false;
 		}
 		Connection c = null;
@@ -36,7 +36,7 @@ public class DatabaseConnection {
 					System.out.println("true");
 					return true;
 				} else {
-					System.out.println("false");
+					System.out.println("false2");
 					return false;
 				}
 			}
@@ -46,7 +46,7 @@ public class DatabaseConnection {
 			e.printStackTrace();
 		}
 		// //////end of db code
-		System.out.println("false");
+		System.out.println("false3");
 		return false;
 
 	}
