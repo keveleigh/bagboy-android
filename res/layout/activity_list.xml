@@ -49,12 +49,12 @@
     android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/routeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#29348D"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:background="#29348D"
         android:text="Find Route"
         android:textColor="#FFFFFF" />
 

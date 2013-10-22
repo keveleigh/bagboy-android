@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 
@@ -35,6 +36,18 @@ public class ListActivity extends Activity{
 			}
         	
 		});
+        
+        Button routeButton = (Button) findViewById(R.id.routeButton);
+        
+        routeButton.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(ListActivity.this, RouteActivity.class);
+            	startActivity(i); 
+			}
+        	
+        });
         
         //sets up all the drop downs with values that are set in the activities from home 
         //http://developer.android.com/guide/topics/ui/controls/spinner.html
