@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class DatabaseConnection {
+	
+	static ArrayList<String> items = new ArrayList<String>();
 
 	public DatabaseConnection() {
 		
@@ -122,14 +124,14 @@ public class DatabaseConnection {
 	
 	public void addToList(String list, String newProduct) {
 		//db code to add new product the list 
-		ResultSet rs2 = null;
-		ResultSet rs3 = null;
-		PreparedStatement pst2 = null;
-		PreparedStatement pst3 = null;
-		int productId = 0;
-		int listId = 0;
-		Statement stmt2 = null;
-		
+//		ResultSet rs2 = null;
+//		ResultSet rs3 = null;
+//		PreparedStatement pst2 = null;
+//		PreparedStatement pst3 = null;
+//		int productId = 0;
+//		int listId = 0;
+//		Statement stmt2 = null;
+//		
 //		try {
 //			Class.forName("org.postgresql.Driver");
 //			c = DriverManager.getConnection(
@@ -166,6 +168,9 @@ public class DatabaseConnection {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+		
+		// Until DB works
+		items.add(newProduct);
 	}
 	
 	public ArrayList<String> loadLists (String username) {
@@ -185,15 +190,18 @@ public class DatabaseConnection {
 	public static ArrayList<String> loadCategories() {
 		ArrayList<String> categories = new ArrayList<String>();
 		//db code to return an array list of all categories
-		categories.add("cookies");
-		categories.add("chips");
-		categories.add("soda");
+		categories.add("Cookies");
+		categories.add("Chips");
+		categories.add("Soda");
+		
 		return categories;
 	}
 	
 	public static ArrayList<String> loadItemsFromCategory (String categoryName) {
 		ArrayList<String> items = new ArrayList<String>();
 		//db code to return an array list of all items in a category
+		items.add("Oreos");
+		items.add("Chips Ahoy!");
 		
 		return items;
 	}
@@ -206,14 +214,16 @@ public class DatabaseConnection {
 	}
 	
 	public static boolean isCold (String productName) {
-		
 		//db code to see whether a product is cold 
 		return false;
 	}
 	
 	public static ArrayList<String> loadItemsFromList (String listName) {
-		ArrayList<String> items = new ArrayList<String>();
+//		ArrayList<String> items = new ArrayList<String>();
 		//db code to return an array list of all items in a list
+//		items.add("Apples");
+//		items.add("Sliced Bread");
+//		items.add("Milk");
 		
 		return items;
 	}

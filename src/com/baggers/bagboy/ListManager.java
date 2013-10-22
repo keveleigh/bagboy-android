@@ -44,6 +44,8 @@ public class ListManager {
 		return db.loadItemsFromCategory(categoryName);
 	}
 	
-	
+	public static ArrayList<String> loadItemsFromList (String listName) {
+		return db.loadItemsFromList(listName);
+	}
 	
 }

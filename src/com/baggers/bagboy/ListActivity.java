@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 public class ListActivity extends Activity{
@@ -49,6 +50,7 @@ public class ListActivity extends Activity{
         	
         });
         
+        
         //sets up all the drop downs with values that are set in the activities from home 
         //http://developer.android.com/guide/topics/ui/controls/spinner.html
         Spinner spinner = (Spinner) findViewById(R.id.storeSpinner);
@@ -61,13 +63,29 @@ public class ListActivity extends Activity{
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
         
-        Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
+        final Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItemsFromCategory(ListManager.currCategory));
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
         
         //TODO: make spinners update content based on other spinners
+        
+        // Populate item list view
+        final ListView itemList = (ListView) findViewById(R.id.itemList);
+        ArrayAdapter<String> listAdapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, ListManager.loadItemsFromList(ListManager.currListName));
+        itemList.setAdapter(listAdapter);
        
+        
+        Button addButton = (Button) findViewById(R.id.addToListButton);
+        addButton.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				ListManager.addToList(spinner2.getSelectedItem().toString());
+				itemList.invalidateViews();
+			}
+        	
+        });
     }
 
     /*

@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity = "center"
-    android:orientation="vertical"
     android:background="#E4E3E8" >
  
     <!-- this will be the list screen -->
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dip"
-        android:text="Your Store"
-        android:textColor="#737373"
-        android:textSize="20sp" />
 
     <CheckBox
         android:id="@+id/coldCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
         android:text="Pick up cold items last" />
 
+    <Spinner
+        android:id="@+id/storeSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coldCheck" />
+
     <TextView
+        android:id="@+id/listText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dip"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/storeSpinner"
         android:text="Your List"
         android:textColor="#737373"
         android:textSize="20sp" />
 
     <!-- drop down menu for store -->
-    <Spinner
-    android:id="@+id/storeSpinner"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" />
     
     <!-- drop down menu for category -->
     <Spinner
     android:id="@+id/categorySpinner"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content" />
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/listText" />
     
     <!-- drop down menu for item -->
+
     <Spinner
-    android:id="@+id/itemSpinner"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" />
+        android:id="@+id/itemSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/coldCheck"
+        android:layout_below="@+id/categorySpinner" />
 
     <Button
         android:id="@+id/routeButton"
@@ -54,8 +55,46 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
         android:background="#29348D"
         android:text="Find Route"
         android:textColor="#FFFFFF" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Your Store"
+        android:textColor="#737373"
+        android:textSize="20sp" />
+
+    <ListView
+        android:id="@+id/itemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/routeButton"
+        android:layout_below="@+id/itemSpinner"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/addToListButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/itemSpinner"
+        android:background="#29348D"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Add"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

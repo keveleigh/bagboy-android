@@ -2,17 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity = "center"
     android:orientation="vertical"
     android:background="#29348D" >
 
     <!-- this will be the map screen -->
-    <TextView android:layout_width="210dp"
-	    android:layout_height="wrap_content"
-	    android:textSize="20sp"
-	    android:textColor="#ffffff"
-	    android:layout_marginTop="30dip"
-	    android:text="THIS IS THE MAP SCREEN"/>
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mapimage" />
 
 </LinearLayout>

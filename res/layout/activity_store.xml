@@ -2,16 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity = "center"
     android:orientation="vertical"
     android:background="#29348D" >
 
     <!-- this will be the store screen -->
-    <TextView android:layout_width="210dp"
-	    android:layout_height="wrap_content"
-	    android:textSize="20sp"
-	    android:textColor="#ffffff"
-	    android:layout_marginTop="30dip"
-	    android:text="THIS IS THE STORES SCREEN"/>
+
+    <Button
+        android:id="@+id/krogerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/borderbtn"
+        android:text="Kroger						1.5 mi"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/publixButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/borderbtn"
+        android:text="Publix						2.3 mi"
+        android:textColor="#FFFFFF" />
 
 </LinearLayout>
