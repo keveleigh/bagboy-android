@@ -9,13 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class DatabaseConnection {
-	
+
 	static ArrayList<String> items = new ArrayList<String>();
 
 	public DatabaseConnection() {
-		
+
 	}
-	
+
 	public boolean checkLogin(String email, String password) {
 		//db code to check if the email and password are in the database
 		if (email == null || password == null) {
@@ -56,9 +56,9 @@ public class DatabaseConnection {
 		return false;
 
 	}
-	
+
 	public void registerUser(String email, String password) {
-		
+
 		//put in a new user with that email and password
 		Connection c = null;
 		Statement stmt = null;
@@ -75,7 +75,7 @@ public class DatabaseConnection {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public boolean checkEmail(String email) {
 		//check to see if that email is already in the database
 		//return true if it is
@@ -103,7 +103,7 @@ public class DatabaseConnection {
 		}
 		return false;
 	}
-	 
+
 	public void createList(String currUser, String listName) {
 		//db code to create a new list in the list table
 		Connection c = null;
@@ -121,7 +121,7 @@ public class DatabaseConnection {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void addToList(String list, String newProduct) {
 		//db code to add new product the list 
 //		ResultSet rs2 = null;
@@ -168,17 +168,17 @@ public class DatabaseConnection {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		
+
 		// Until DB works
 		items.add(newProduct);
 	}
-	
+
 	public ArrayList<String> loadLists (String username) {
 		ArrayList<String> lists = new ArrayList<String>();
 		//db code to get all the list names associated with a username
 		return lists;
 	}
-	
+
 	public ArrayList<String> loadStores() {
 		ArrayList<String> stores = new ArrayList<String>();
 		//db code to get all the stores
@@ -186,45 +186,45 @@ public class DatabaseConnection {
 		stores.add("Publix");
 		return stores;
 	}
-	
+
 	public static ArrayList<String> loadCategories() {
 		ArrayList<String> categories = new ArrayList<String>();
 		//db code to return an array list of all categories
 		categories.add("Cookies");
 		categories.add("Chips");
 		categories.add("Soda");
-		
+
 		return categories;
 	}
-	
+
 	public static ArrayList<String> loadItemsFromCategory (String categoryName) {
 		ArrayList<String> items = new ArrayList<String>();
 		//db code to return an array list of all items in a category
 		items.add("Oreos");
 		items.add("Chips Ahoy!");
-		
+
 		return items;
 	}
-	
+
 	public static int getAisle (String category) {
 		//db code to get the aisle of a category
 		//maybe with a given store - need to figure this out 
-	
+
 		return 0;
 	}
-	
+
 	public static boolean isCold (String productName) {
 		//db code to see whether a product is cold 
 		return false;
 	}
-	
+
 	public static ArrayList<String> loadItemsFromList (String listName) {
-//		ArrayList<String> items = new ArrayList<String>();
+		ArrayList<String> items = new ArrayList<String>();
 		//db code to return an array list of all items in a list
-//		items.add("Apples");
-//		items.add("Sliced Bread");
-//		items.add("Milk");
-		
+		items.add("Apples");
+		items.add("Sliced Bread");
+		items.add("Milk");
+
 		return items;
 	}
 }

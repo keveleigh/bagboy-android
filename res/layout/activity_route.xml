@@ -20,25 +20,20 @@
         android:background="@drawable/borderbtn"
         android:text="I&apos;m Finished"
         android:textColor="#FFFFFF" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:text="Map View/List View Tabs Go Here"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_above="@+id/finishButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="57dp"
-        android:text="Replace with Swipe-per-item Bar"
-        android:textColor="#FFFFFF" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+		    <android.support.v4.view.PagerTabStrip
+		        android:id="@+id/pager_header"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="top"
+		        android:paddingBottom="4dp"
+		        android:paddingTop="4dp"
+		        android:textColor="#fff" />
+	</android.support.v4.view.ViewPager>
 
 </RelativeLayout>
