@@ -6,19 +6,11 @@
  
     <!-- this will be the list screen -->
 
-    <CheckBox
-        android:id="@+id/coldCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:text="Pick up cold items last" />
-
     <Spinner
         android:id="@+id/storeSpinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/coldCheck" />
+        android:layout_below="@+id/textView1" />
 
     <TextView
         android:id="@+id/listText"
@@ -38,7 +30,7 @@
     android:id="@+id/categorySpinner"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/listText" />
+    android:layout_below="@+id/coldCheck" />
     
     <!-- drop down menu for item -->
 
@@ -96,5 +88,13 @@
         android:layout_marginRight="10dp"
         android:text="Add"
         android:textColor="#FFFFFF" />
+
+    <CheckBox
+        android:id="@+id/coldCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listText"
+        android:layout_centerHorizontal="true"
+        android:text="Pick up cold items last" />
 
 </RelativeLayout>
