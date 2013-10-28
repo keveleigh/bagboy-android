@@ -16,35 +16,59 @@ public class LoginManager {
 	}
 
 	public static boolean checkLogin(String username, String password) {
-		//loggedIn = db.checkLogin(username, password);
-		//if the login was successful, set the current user information
-		if (username.equals("admin@gatech.edu") && password.equals("gatech"))
-			loggedIn = true;
+		//tries to login with the database, 
+		loggedIn = db.checkLogin(username, password);
+		
 		if (loggedIn) {
 			currUserEmail = username;
 			currUserPassword = password;
 		}
+		
+		error = "Invalid email or password";
 		return loggedIn;
 
 	}
 
 	public static boolean registerUser(String username, String password, String passwordConfirm) {
 		
-		//check required limits on lengths of username and password
-		//if those are good, call database register user 
-		//check to see if that user is already registered
-		if (db.checkEmail(username))
+		//check if password and password confirm match
+		if (!(password.equals(passwordConfirm))) {
+			error = "Passwords do not match";
 			return false;
+		}
+		//check if it's a valid email address
+		String emailregex = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}";
+		if (!(username.matches(emailregex))) {
+			error = "Invalid email address";
+			return false;
+		}
+		//check if the password length is greater than 5
+		if (password.length() < 5) {
+			error = "Invalid password length (use 6 or more characters)";
+			return false;
+		}
+		//if those are good, call database register user 
+		
+		//check to see if that user is already registered
+		if (db.checkEmail(username)) {
+			error = "Email address already registered";
+			return false;
+		}
+		
 		//if everything is good, register the user, set the current user information
-		else {
-			db.registerUser(username, password);
-			loggedIn = true;
+		loggedIn = db.registerUser(username, password);
+		if (loggedIn) {
 			currUserEmail = username;
 			currUserPassword = password;
 		}
+		else {
+			error = "Registration failed";
+		}
+		
+		return loggedIn;
+	
 		
 		//to make the compiler happy until we finish implementation
-		return true;
 	}
 	
 	public static String getError() {

@@ -57,7 +57,7 @@ public class DatabaseConnection {
 
 	}
 
-	public void registerUser(String email, String password) {
+	public boolean registerUser(String email, String password) {
 
 		//put in a new user with that email and password
 		Connection c = null;
@@ -71,8 +71,11 @@ public class DatabaseConnection {
 			String sql = "insert into users (user_id, user_email, password)"
 					+ "values (DEFAULT,'" + email + "','" + password + "');";
 			stmt.execute(sql);
+			
+			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
+			return false;
 		}
 	}
 

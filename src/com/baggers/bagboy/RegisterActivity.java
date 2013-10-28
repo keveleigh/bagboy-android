@@ -52,7 +52,8 @@ public class RegisterActivity extends Activity{
 	                    	startActivity(i); 
                         }
                         else {
-                        	Toast.makeText(RegisterActivity.this, "Register failed", Toast.LENGTH_LONG).show();
+                        	String error = LoginManager.getError();
+                        	Toast.makeText(RegisterActivity.this, error, Toast.LENGTH_LONG).show();
                         }
               
                 }

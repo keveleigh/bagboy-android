@@ -59,10 +59,10 @@ public class LoginActivity extends Activity{
                         }
                         else {
                         	//message stating that the username password are incorrect
-                        	LoginManager.getError();
+                        	String error = LoginManager.getError();
                         	
                         	//TODO: error messages 
-                        	Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_LONG).show();
+                        	Toast.makeText(LoginActivity.this, error, Toast.LENGTH_LONG).show();
                         }
               
                 }
