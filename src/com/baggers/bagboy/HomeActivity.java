@@ -35,6 +35,11 @@ public class HomeActivity extends FragmentActivity {
 		createList.setOnClickListener(
 				new OnClickListener() {
 					public void onClick(View v) {
+						
+						
+						
+						ListManager.createTempList();
+						
 						Intent i = new Intent(HomeActivity.this, ListActivity.class);
 						startActivity(i);
 					}

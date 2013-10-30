@@ -16,11 +16,21 @@ public class ListManager {
 	}
 	
 	public static void createList(String listName) {
-		String currUser = LoginManager.currUserEmail;
-		db.createList(currUser, listName);
+	
+		db.createList(LoginManager.currUserEmail, listName);
+	}
+	
+	public static void createTempList() {
+		currListName = "tmp";
 	}
 	
 	public static void addToList(String newProduct) {
+		
+		//get the current list and add new product to it 
+		if (currListName.equals("tmp"))
+		{
+			createList("some string name");
+		}
 		db.addToList(currListName, newProduct);
 	}
 	
