@@ -53,17 +53,17 @@ public class LoginActivity extends Activity{
                         //2. correct user name/password in which case it goes to the home screen 
                         
                         //check userID and password
-                        if (LoginManager.checkLogin(username, password)) {
+                        //if (LoginManager.checkLogin(username, password)) {
 	                        Intent i = new Intent(LoginActivity.this, HomeActivity.class);
 	                    	startActivity(i); 
-                        }
-                        else {
-                        	//message stating that the username password are incorrect
-                        	String error = LoginManager.getError();
-                        	
-                        	//TODO: error messages 
-                        	Toast.makeText(LoginActivity.this, error, Toast.LENGTH_LONG).show();
-                        }
+                        //}
+//                        else {
+//                        	//message stating that the username password are incorrect
+//                        	String error = LoginManager.getError();
+//                        	
+//                        	//TODO: error messages 
+//                        	Toast.makeText(LoginActivity.this, error, Toast.LENGTH_LONG).show();
+//                        }
               
                 }
         		});

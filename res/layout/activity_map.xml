@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity" >
     android:orientation="vertical"
-    android:background="#29348D" >
+    android:background="#29348D"
 
-    <!-- this will be the map screen -->
+    this will be the map screen
 
-    <ImageView
+		<ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/mapimage" />
 
-</LinearLayout>
+		<fragment
+          android:id="@+id/map"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          class="com.google.android.gms.maps.SupportMapFragment"
+          android:name="com.baggers.bagboy.MapActivity"/>
+	
+</RelativeLayout> -->
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/map"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    class="com.google.android.gms.maps.SupportMapFragment"
+    android:name="com.baggers.bagboy.MainActivity"/>
