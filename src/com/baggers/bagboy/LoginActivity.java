@@ -36,36 +36,32 @@ public class LoginActivity extends Activity{
 	           
         		new View.OnClickListener() {
 	                
-	                
-                private String username;
-                private String password;
-
-                public void onClick(View v) {
-                	
-                        EditText usernameEdit = (EditText)findViewById(R.id.username);
-                        EditText passwordEdit = (EditText)findViewById(R.id.password);
-                        
-                        username = usernameEdit.getText().toString();
-                        password = passwordEdit.getText().toString();
-                        
-                        //options the user has from this point
-                        //1. invalid user name/password
-                        //2. correct user name/password in which case it goes to the home screen 
-                        
-                        //check userID and password
-                        //if (LoginManager.checkLogin(username, password)) {
+	                private String username;
+	                private String password;
+	
+	                public void onClick(View v) {
+	                	EditText usernameEdit = (EditText)findViewById(R.id.username);
+	                	EditText passwordEdit = (EditText)findViewById(R.id.password);
+	                        
+	                    username = usernameEdit.getText().toString();
+	                    password = passwordEdit.getText().toString();
+	                        
+	                    //options the user has from this point
+	                    //1. invalid user name/password
+	                    //2. correct user name/password in which case it goes to the home screen 
+	                        
+	                    //check userID and password
+                        if (LoginManager.checkLogin(username, password)) {
 	                        Intent i = new Intent(LoginActivity.this, HomeActivity.class);
 	                    	startActivity(i); 
-                        //}
-//                        else {
-//                        	//message stating that the username password are incorrect
-//                        	String error = LoginManager.getError();
-//                        	
-//                        	//TODO: error messages 
-//                        	Toast.makeText(LoginActivity.this, error, Toast.LENGTH_LONG).show();
-//                        }
-              
-                }
+                        } else {
+                        	//message stating that the username password are incorrect
+                        	String error = LoginManager.getError();
+                        	
+                        	//TODO: error messages 
+                        	Toast.makeText(LoginActivity.this, error, Toast.LENGTH_LONG).show();
+                        }
+	                }
         		});
 
         //listener for the register button
@@ -73,13 +69,13 @@ public class LoginActivity extends Activity{
     	        
         		new View.OnClickListener() {
 
-                public void onClick(View v) {
-                	
-                	//takes the user to the register screen
-                	Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
-                	startActivity(i);
-                     
-                }
+	                public void onClick(View v) {
+	                	
+	                	//takes the user to the register screen
+	                	Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+	                	startActivity(i);
+	                	
+	                }
         		});
     }
     

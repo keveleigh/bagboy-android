@@ -40,7 +40,6 @@
         <activity android:name="StoreActivity"></activity>
         <activity android:name="MyListActivity"></activity>
         <activity android:name="MapActivity"></activity>
-<<<<<<< HEAD
         
         <meta-data
            android:name="com.google.android.gms.version"
@@ -50,9 +49,7 @@
 		    android:name="com.google.android.maps.v2.API_KEY"
 		    android:value="AIzaSyAas-fIs9zi2gLak9Hh9v4KmMzvWtyCslI"/>
         
-=======
         <activity android:name="EndActivity"></activity>
->>>>>>> 9d2ce21d61c821612071c95936b1200f233d90cb
     </application>
 
 </manifest>
