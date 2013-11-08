@@ -28,6 +28,7 @@
         <activity android:name="StoreActivity"></activity>
         <activity android:name="MyListActivity"></activity>
         <activity android:name="MapActivity"></activity>
+        <activity android:name="EndActivity"></activity>
     </application>
 
 </manifest>
