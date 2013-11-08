@@ -28,8 +28,7 @@ public class DatabaseConnection {
 		try {
 			Class.forName("org.postgresql.Driver");
 			c = DriverManager.getConnection(
-					"jdbc:postgresql://128.61.57.241:8080/bagboy", "postgres",
-					"australia3");
+					"jdbc:postgresql://ec2-54-235-113-246.compute-1.amazonaws.com:5432/dag2vh7nha23ho","hireqozusngrdn", "L6twQGrX-G1-_AiRXA-FXMw8Mw");
 			pst = c.prepareStatement("SELECT * FROM USERS ;");
 			rs = pst.executeQuery();
 			System.out.println("try");
