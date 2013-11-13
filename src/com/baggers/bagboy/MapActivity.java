@@ -36,8 +36,8 @@ public class MapActivity extends Fragment {
 
 	    // Move the camera instantly to hamburg with a zoom of 15.
 //	    map.moveCamera(CameraUpdateFactory.newLatLngZoom(HAMBURG, 15));
-//
-//	    // Zoom in, animating the camera.
+
+	    // Zoom in, animating the camera.
 //	    map.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
 	    
 	    return v;
