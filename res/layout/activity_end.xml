@@ -3,7 +3,82 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#E4E3E8" >
- 
-   
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:text="Finished shopping?"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:text="You flagged the following items:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/flaggedLV"
+        android:layout_width="match_parent"
+        android:layout_height="265dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="5dp"
+       	android:layout_marginRight="5dp"
+        android:textColor="#000000" >
+    </ListView>
+    
+    <Button
+        android:id="@+id/saveFlaggedBtn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/flaggedLV"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="12dp"
+        android:background="#29348D"
+        android:text="Save flagged items as new list"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/shopFlaggedBtn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/saveFlaggedBtn"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#29348D"
+        android:text="Continue shopping with flagged items"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/retHomeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/shopFlaggedBtn"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#29348D"
+        android:text="Return to home"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
 
 </RelativeLayout>

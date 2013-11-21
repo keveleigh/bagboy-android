@@ -12,6 +12,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class RouteActivity extends FragmentActivity {
 	MyPageAdapter pageAdapter;
@@ -31,13 +34,17 @@ public class RouteActivity extends FragmentActivity {
 		pageAdapter = new MyPageAdapter(getSupportFragmentManager(), fragments);
 		ViewPager pager = (ViewPager)findViewById(R.id.viewpager);
 		pager.setAdapter(pageAdapter);
-	}
+		
+		Button finishButton = (Button) findViewById(R.id.finishButton);
+		finishButton.setOnClickListener(new OnClickListener(){
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		Intent myIntent = new Intent(getApplicationContext(), ListActivity.class);
-		startActivityForResult(myIntent, 0);
-		return true;
+			@Override
+			public void onClick(View v) {
+				Intent myIntent = new Intent(getApplicationContext(), EndActivity.class);
+				startActivityForResult(myIntent, 0);
+			}
+			
+		});
 	}
 
 	private List<Fragment> getFragments() {

@@ -1,4 +1,5 @@
 package com.baggers.bagboy;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,18 +16,12 @@ public class EndActivity extends Activity{
 	
         super.onCreate(savedInstanceState);
         
-//        if (android.os.Build.VERSION.SDK_INT >= 9) {
-//    		System.out.println("Hi");
-//    		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//    		StrictMode.setThreadPolicy(policy);
-//    	}
-        
-        // Removes title bar - must keep ABOVE setContentView
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        
         // set default screen to login GUI
         setContentView(R.layout.activity_end);
 
+	    // Sets up action bar back button
+	    ActionBar actionBar = this.getActionBar();
+	    actionBar.setDisplayHomeAsUpEnabled(true);
        
     }
     
