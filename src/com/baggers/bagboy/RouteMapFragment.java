@@ -25,7 +25,7 @@ public class RouteMapFragment extends Fragment {
 		View V = inflater.inflate(R.layout.fragment_route_map, container, false);
 
 		//loads all the lists
-		itemsList = ListManager.loadItemsFromList(ListManager.currListName);
+		itemsList = ListManager.loadItemsFromList();
 
 		cxt = getActivity();
 

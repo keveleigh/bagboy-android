@@ -23,7 +23,7 @@ public class ListManager {
 	
 	
 	public static void addToList(String newProduct) {
-		
+		currProductList.add(newProduct);
 		
 	}
 	
@@ -59,8 +59,10 @@ public class ListManager {
 		return items;
 	}
 	
-	public static ArrayList<String> loadItemsFromList (String listName) {
-		return db.loadItemsFromList(listName);
+	public static ArrayList<String> loadItemsFromList () {
+		//return db.loadItemsFromList(listName);
+		return currProductList;
+		
 	}
 	
 }

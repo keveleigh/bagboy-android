@@ -72,7 +72,7 @@ public class ListActivity extends Activity{
         
         // Populate item list view
         final ListView itemList = (ListView) findViewById(R.id.itemList);
-        ArrayAdapter<String> listAdapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, ListManager.loadItemsFromList(ListManager.currListName));
+        ArrayAdapter<String> listAdapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, ListManager.loadItemsFromList());
         itemList.setAdapter(listAdapter);
        
         

@@ -20,7 +20,7 @@ public class RouteListFragment extends Fragment {
 		View V = inflater.inflate(R.layout.fragment_route_list, container, false);
 		
 		//loads all the lists
-		itemsList = ListManager.loadItemsFromList(ListManager.currListName);  
+		itemsList = ListManager.loadItemsFromList();  
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, itemsList);
 		
