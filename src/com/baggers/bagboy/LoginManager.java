@@ -5,6 +5,7 @@ public class LoginManager {
 	static String currUserEmail;
 	static String currUserPassword;
 	static DatabaseConnection db = new DatabaseConnection();
+	static ArrayList<String> registeredUsers;
 	//the error message to be returned
 	static String error = "";
 	
@@ -23,7 +24,7 @@ public class LoginManager {
 		}
 		
 		//tries to login with the database, 
-		loggedIn = db.checkLogin(username, password);
+		//loggedIn = db.checkLogin(username, password);
 		
 		if (loggedIn) {
 			currUserEmail = username;
@@ -56,13 +57,18 @@ public class LoginManager {
 		//if those are good, call database register user 
 		
 		//check to see if that user is already registered
-		if (db.checkEmail(username)) {
+		//if (db.checkEmail(username)) {
+		//	error = "Email address already registered";
+		//	return false;
+		//}
+		if (registeredUsers.contains(username)){
 			error = "Email address already registered";
 			return false;
 		}
 		
 		//if everything is good, register the user, set the current user information
-		loggedIn = db.registerUser(username, password);
+		//loggedIn = db.registerUser(username, password);
+		registeredUsers.add("username");
 		if (loggedIn) {
 			currUserEmail = username;
 			currUserPassword = password;
