@@ -47,6 +47,66 @@ public class ListManager {
 		//return db.loadCategories();
 		ArrayList<String> categories = new ArrayList<String>();
 		//a bunch of statements adding strings to the categories list 
+		categories.add("Wine");
+		categories.add("Bread");
+		categories.add("Baked Goods");
+		categories.add("Beer");
+		categories.add("Bakery");
+		categories.add("Deli");
+		categories.add("Syrup");
+		categories.add("Peanut Butter");
+		categories.add("Cereals");
+		categories.add("Coffee/Tee");
+		categories.add("Powdered Drinks");
+		categories.add("Spices/Extract");
+		categories.add("Cake Mix")
+		categories.add("Sugar");
+		categories.add("Soup");
+		categories.add("Pickles/Olives");
+		categories.add("Canned Veggies");
+		categories.add("Pasta");
+		categories.add("Spaghetti/Sauces");
+		categories.add("Rice/Dry Beans");
+		categories.add("Cookies");
+		categories.add("Bathroom Tissue");
+		categories.add("Paper Towels");
+		categories.add("Snacks");
+		categories.add("Cola");
+		categories.add("Potato Chips"):
+		categories.add("Pet Food");
+		categories.add("Charcoal");
+		categories.add("Candles");
+		categories.add("Laundry Detergent");
+		categories.add("Dishwashing Detergent");
+		categories.add("Medicines");
+		categories.add("Baby Products");
+		categories.add("Deodorant");
+		categories.add("Hair Care");
+		categories.add("Bar Soap");
+		categories.add("Cards");
+		categories.add("Water");
+		categories.add("Cheese");
+		categories.add("Milk");
+		categories.add("Vitamins");
+		categories.add("Frozen Breakfast");
+		categories.add("Frozen Meats");
+		categories.add("Frozen Juices");
+		categories.add("Bacon");
+		categories.add("Ice Cream");
+		categories.add("Frozen Dessert");
+		categories.add("Frozen Seafood");
+		categories.add("Frozen Potatoes");
+		categories.add("Novelties");
+		categories.add("Frozen Dinners");
+		categories.add("Frozen Veggies");
+		categories.add("Frozen Entrees");
+		categories.add("Frozen Food");
+		categories.add("Frozen Pizza");
+		categories.add("Fruits");
+		categories.add("Produce");
+		categories.add("Meats");
+		categories.add("Seafood");
+		categories.add("Produce");
 		return categories;
 	}
 	
