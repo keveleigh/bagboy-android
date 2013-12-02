@@ -9,6 +9,7 @@ public class ListManager {
 	static String currStore;
 	static String currCategory;
 	static String currItem;
+	static ArrayList<String> listCollection
 	static DatabaseConnection db = new DatabaseConnection();
 	
 	public ListManager() {
@@ -17,7 +18,7 @@ public class ListManager {
 	
 	public static void createList(String listName) {
 		currProductList = new ArrayList<String>();
-		
+		listCollection.add(currProductList);
 		//db.createList(LoginManager.currUserEmail, listName);
 	}
 	
@@ -30,7 +31,7 @@ public class ListManager {
 	public static ArrayList<String> loadLists() {
 		String currUser = LoginManager.currUserEmail;
 		//gets all the lists based on the current user
-		return db.loadLists(currUser);
+		return listCollection;
 	}
 	
 	public static ArrayList<String> loadStores() {
@@ -39,7 +40,8 @@ public class ListManager {
 		//a bunch of statements adding strings to the categories list 
 		stores.add("Publix");
 		stores.add("Kroger");
-		
+		stores.add("Walmart Supercenter");
+		stores.add("Super Target");
 		return stores; 
 	}
 	
@@ -135,7 +137,10 @@ public class ListManager {
 			items.add("Biscuits");
 		}
 		else if (categories.equal("Beer"){
-			
+			items.add("Budweiser");
+			items.add("Bud Light");
+			items.add("Shock Top");
+			items.add("Blue Moon");
 		}
 		else if (categories.equal("Bakery"){
 			items.add("Croissants");
@@ -143,25 +148,53 @@ public class ListManager {
 			items.add("Donuts");
 		}
 		else if (categories.equal("Deli"){
-			
+			items.add("Deli");
 		}
 		else if (categories.equal("Syrup"){
-			
+			items.add("Auntie May");
+			items.add("Cranberry Syrup");
+			items.add("Syrup");
 		}
 		else if (categories.equal("Peanut Butter"){
-			
+			items.add("Peanut Butter");
+			items.add("Jif");
+			items.add("Skippy");
+			items.add("Peter Pan");
 		}
 		else if (categories.equal("Cereals"){
-			
+			items.add("Cereals");
+			items.add("Apple Jacks");
+			items.add("Frosted Flakes");
+			items.add("Bran Flakes");
+			items.add("Cap'n Crunch");
+			items.add("Cheerios");
+			items.add("Chex");
+			items.add("Cinnamon Toast Crunch");
 		}
 		else if (categories.equal("Coffee/Tea"){
-			
+			items.add("Coffee");
+			items.add("Tea");
+			items.add("Ground Coffee");
 		}
 		else if (categories.equal("Powdered Drinks"){
-			
+			items.add("Crystal Light");
+			items.add("Lipton Tea");
+			items.add("Gatorade");
+			items.add("Nestle Nesquik");
+			items.add("Powerade");
 		}
 		else if (categories.equal("Spices/Extract"){
-			
+			items.add("Basil");
+			items.add("Spices");
+			items.add("Extract");
+			items.add("Chives");
+			items.add("Mint");
+			items.add("Dill");
+			items.add("Oregano");
+			items.add("Parsley");
+			items.add("Rosemary");
+			items.add("Sage");
+			items.add("Thyme");
 		}
 		else if (categories.equal("Cake Mix"){
 			items.add("Cake Mix");
@@ -170,13 +203,15 @@ public class ListManager {
 			items.add("Flour");
 		}
 		else if (categories.equal("Sugar"){
-			
+			items.add("Sugar");
 		}
 		else if (categories.equal("Soup"){
-			
+			items.add("Soup");
+			items.add("Tomato Soup");
 		}
 		else if (categories.equal("Pickles/Olives"){
-			
+			items.add("Pickles");
+			items.add("Olives");
 		}
 		else if (categories.equal("Canned Veggies"){
 			items.add("Asparagus");
@@ -189,10 +224,11 @@ public class ListManager {
 			
 		}
 		else if (categories.equal("Pasta"){
-			
+			items.add("Pasta");
 		}
 		else if (categories.equal("Spaghetti/Sauces"){
-			
+			items.add("Spaghetti");
+			items.add("Sauce");
 		}
 		else if (categories.equal("Rice/Dry Beans"){
 			items.add("Baked Beans");
@@ -202,13 +238,19 @@ public class ListManager {
 			items.add("String Beans");
 		}
 		else if (categories.equal("Cookies"){
-			
+			items.add("Cookies");
+			items.add("Sugar Cookies")l
+			items.add("Chocolate Chip Cookies");
+			items.add("Cookie Dough");
 		}
 		else if (categories.equal("Bathroom Tissue"){
-			
+			items.add("Bathroom Tissue");
+			items.add("Toilet Paper");
+			items.add("Bathroom Cleaners");
 		}
 		else if (categories.equal("Paper Towels"){
-			
+			items.add("Paper Towels");
+			items.add("Garbage Bags");
 		}
 		else if (categories.equal("Snacks"){
 			items.add("Candy");
@@ -226,19 +268,21 @@ public class ListManager {
 			items.add("Pepsi");
 		}
 		else if (categories.equal("Potato Chips"){
-			
+			items.add("Chips");
+			items.add("Lays Chips");
+			items.add("Doritos");
 		}
 		else if (categories.equal("Pet Food"){
-			
+			items.add("Ped Food");
 		}
 		else if (categories.equal("Charcoal"){
-			
+			items.add("Charcoal");
 		}
 		else if (categories.equal("Candles"){
-			
+			items.add("Candles");
 		}
 		else if (categories.equal("Laundry Detergent"){
-			
+			items.add("Laundry Detergent");
 		}
 		else if (categories.equal("Dishwashing Detergent"){
 			items.add("Dishwashing Soap");
@@ -254,19 +298,23 @@ public class ListManager {
 			items.add("Rubbing Alcohol");
 		}
 		else if (categories.equal("Baby Products"){
-			
+			items.add("Baby Products");
+			items.add("Bottles");
 		}
 		else if (categories.equal("Deodorant"){
-			
+			items.add("Deodorant");
 		}
 		else if (categories.equal("Hair Care"){
-			
+			items.add("Shampoo");
+			items.add("Conditioner");
 		}
 		else if (categories.equal("Bar Soap"){
-			
+			items.add("Bar Soap");
+			items.add("Soap");
+			items.add("Body Lotion");
 		}
 		else if (categories.equal("Cards"){
-			
+			items.add("Cards");
 		}
 		else if (categories.equal("Water"){
 			items.add("Bottled Water");
@@ -282,7 +330,10 @@ public class ListManager {
 			items.add("Cream Cheese");
 		}
 		else if (categories.equal("Milk"){
-			
+			items.add("Milk");
+			items.add("2 Percent Milk");
+			items.add("Skim Milk");
+			items.add("Soy Milk");
 		}
 		else if (categories.equal("Vitamins"){
 			
@@ -299,10 +350,12 @@ public class ListManager {
 			items.add("Ground Turkey");
 		}
 		else if (categories.equal("Frozen Juices"){
-			
+			items.add("Orange Juice");
+			items.add("Juice");
+			items.add("Apple Juice");
 		}
 		else if (categories.equal("Bacon"){
-			
+			items.add("Bacon");
 		}
 		else if (categories.equal("Ice Cream"){
 			items.add("Premium Ice Cream");
@@ -310,7 +363,9 @@ public class ListManager {
 			items.add("Ice Cream");
 		}
 		else if (categories.equal("Frozen Dessert"){
-			
+			items.add("Frozen Dessert");
+			items.add("Pie");
+			items.add("Ice Cream");
 		}
 		else if (categories.equal("Frozen Seafood"){
 			items.add("Flounder");
@@ -318,10 +373,14 @@ public class ListManager {
 			items.add("Tilapia");
 		}
 		else if (categories.equal("Frozen Potatoes"){
-			
+			items.add("French Fries");
+			items.add("Frozen Potatoes");
 		}
 		else if (categories.equal("Novelties"){
-			
+			items.add("Novelties");
+			items.add("Paper");
+			items.add("Pencils"):
+			items.add("Notebook");
 		}
 		else if (categories.equal("Frozen Dinners"){
 			items.add("Hamburger Helper");
@@ -330,13 +389,15 @@ public class ListManager {
 			items.add("Frozen Veggies");
 		}
 		else if (categories.equal("Frozen Entrees"){
-			
+			items.add("Frozen Entrees");
+			items.add("Hot Pockets");
+			items.add("Lean Cuisine");
 		}
 		else if (categories.equal("Frozen Food"){
-			
+			items.add("Frozen Food");
 		}
 		else if (categories.equal("Frozen Pizza"){
-			
+			items.add("Frozen Pizza");
 		}
 		else if (categories.equal("Fruits"){
 			items.add("Apples");
@@ -373,7 +434,7 @@ public class ListManager {
 			items.add("Pork");
 		}
 		else if (categories.equal("Seafood"){
-			
+			items.add("Seafood");	
 		}
 		return items;
 	}
