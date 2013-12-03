@@ -9,7 +9,7 @@ public class ListManager {
 	static String currStore;
 	static String currCategory;
 	static String currItem;
-	static ArrayList<String> listCollection
+	static ArrayList<String> listCollection;
 	static DatabaseConnection db = new DatabaseConnection();
 	
 	public ListManager() {
@@ -61,7 +61,7 @@ public class ListManager {
 		categories.add("Coffee/Tee");
 		categories.add("Powdered Drinks");
 		categories.add("Spices/Extract");
-		categories.add("Cake Mix")
+		categories.add("Cake Mix");
 		categories.add("Sugar");
 		categories.add("Soup");
 		categories.add("Pickles/Olives");
@@ -74,7 +74,7 @@ public class ListManager {
 		categories.add("Paper Towels");
 		categories.add("Snacks");
 		categories.add("Cola");
-		categories.add("Potato Chips"):
+		categories.add("Potato Chips");
 		categories.add("Pet Food");
 		categories.add("Charcoal");
 		categories.add("Candles");
@@ -115,7 +115,7 @@ public class ListManager {
 	public static ArrayList<String> loadItemsFromCategory (String categoryName) {
 		//return db.loadItemsFromCategory(categoryName);
 		ArrayList<String> items = new ArrayList<String>();
-		if (categoryName.equal("Wine")){
+		if (categoryName.equals("Wine")){
 			items.add("Cabernet");
 			items.add("White Wine");
 			items.add("Dessert Wine");
@@ -123,7 +123,7 @@ public class ListManager {
 			items.add("Chardonnay");
 			items.add("Zinfandel");
 		}
-		else if (categoryName.equal("Bread")){
+		else if (categoryName.equals("Bread")){
 			items.add("Buns");
 			items.add("Rolls");
 			items.add("Bread");
@@ -133,35 +133,35 @@ public class ListManager {
 			items.add("Wheat");
 			items.add("White");
 		}
-		else if (categoryName.equal("Baked Goods")){
+		else if (categoryName.equals("Baked Goods")){
 			items.add("Biscuits");
 		}
-		else if (categoryName.equal("Beer")){
+		else if (categoryName.equals("Beer")){
 			items.add("Budweiser");
 			items.add("Bud Light");
 			items.add("Shock Top");
 			items.add("Blue Moon");
 		}
-		else if (categoryName.equal("Bakery")){
+		else if (categoryName.equals("Bakery")){
 			items.add("Croissants");
 			items.add("Cakes");
 			items.add("Donuts");
 		}
-		else if (categoryName.equal("Deli")){
+		else if (categoryName.equals("Deli")){
 			items.add("Deli");
 		}
-		else if (categoryName.equal("Syrup")){
+		else if (categoryName.equals("Syrup")){
 			items.add("Auntie May");
 			items.add("Cranberry Syrup");
 			items.add("Syrup");
 		}
-		else if (categoryName.equal("Peanut Butter")){
+		else if (categoryName.equals("Peanut Butter")){
 			items.add("Peanut Butter");
 			items.add("Jif");
 			items.add("Skippy");
 			items.add("Peter Pan");
 		}
-		else if (categoryName.equal("Cereals")){
+		else if (categoryName.equals("Cereals")){
 			items.add("Cereals");
 			items.add("Apple Jacks");
 			items.add("Frosted Flakes");
@@ -171,19 +171,19 @@ public class ListManager {
 			items.add("Chex");
 			items.add("Cinnamon Toast Crunch");
 		}
-		else if (categoryName.equal("Coffee/Tea")){
+		else if (categoryName.equals("Coffee/Tea")){
 			items.add("Coffee");
 			items.add("Tea");
 			items.add("Ground Coffee");
 		}
-		else if (categoryName.equal("Powdered Drinks")){
+		else if (categoryName.equals("Powdered Drinks")){
 			items.add("Crystal Light");
 			items.add("Lipton Tea");
 			items.add("Gatorade");
 			items.add("Nestle Nesquik");
 			items.add("Powerade");
 		}
-		else if (categoryName.equal("Spices/Extract")){
+		else if (categoryName.equals("Spices/Extract")){
 			items.add("Basil");
 			items.add("Spices");
 			items.add("Extract");
@@ -196,24 +196,24 @@ public class ListManager {
 			items.add("Sage");
 			items.add("Thyme");
 		}
-		else if (categoryName.equal("Cake Mix")){
+		else if (categoryName.equals("Cake Mix")){
 			items.add("Cake Mix");
 			items.add("Brownie Mix");
 			items.add("Pancacke Mix");
 			items.add("Flour");
 		}
-		else if (categoryName.equal("Sugar")){
+		else if (categoryName.equals("Sugar")){
 			items.add("Sugar");
 		}
-		else if (categoryName.equal("Soup")){
+		else if (categoryName.equals("Soup")){
 			items.add("Soup");
 			items.add("Tomato Soup");
 		}
-		else if (categoryName.equal("Pickles/Olives")){
+		else if (categoryName.equals("Pickles/Olives")){
 			items.add("Pickles");
 			items.add("Olives");
 		}
-		else if (categoryName.equal("Canned Veggies")){
+		else if (categoryName.equals("Canned Veggies")){
 			items.add("Asparagus");
 			items.add("Carrots");
 			items.add("Corn");
@@ -223,36 +223,36 @@ public class ListManager {
 			items.add("Tomatoes");
 			
 		}
-		else if (categoryName.equal("Pasta")){
+		else if (categoryName.equals("Pasta")){
 			items.add("Pasta");
 		}
-		else if (categoryName.equal("Spaghetti/Sauces")){
+		else if (categoryName.equals("Spaghetti/Sauces")){
 			items.add("Spaghetti");
 			items.add("Sauce");
 		}
-		else if (categoryName.equal("Rice/Dry Beans")){
+		else if (categoryName.equals("Rice/Dry Beans")){
 			items.add("Baked Beans");
 			items.add("Butter Beans");
 			items.add("Kidney Beans");
 			items.add("Pinto Beans");
 			items.add("String Beans");
 		}
-		else if (categoryName.equal("Cookies")){
+		else if (categoryName.equals("Cookies")){
 			items.add("Cookies");
-			items.add("Sugar Cookies")l
+			items.add("Sugar Cookies");
 			items.add("Chocolate Chip Cookies");
 			items.add("Cookie Dough");
 		}
-		else if (categoryName.equal("Bathroom Tissue")){
+		else if (categoryName.equals("Bathroom Tissue")){
 			items.add("Bathroom Tissue");
 			items.add("Toilet Paper");
 			items.add("Bathroom Cleaners");
 		}
-		else if (categoryName.equal("Paper Towels")){
+		else if (categoryName.equals("Paper Towels")){
 			items.add("Paper Towels");
 			items.add("Garbage Bags");
 		}
-		else if (categoryName.equal("Snacks")){
+		else if (categoryName.equals("Snacks")){
 			items.add("Candy");
 			items.add("Cookies");
 			items.add("Crackers");
@@ -262,33 +262,33 @@ public class ListManager {
 			items.add("Pretzels");
 			items.add("Raisins");
 		}
-		else if (categoryName.equal("Cola")){
+		else if (categoryName.equals("Cola")){
 			items.add("Generic Brand");
 			items.add("Coca-Cola");
 			items.add("Pepsi");
 		}
-		else if (categoryName.equal("Potato Chips")){
+		else if (categoryName.equals("Potato Chips")){
 			items.add("Chips");
 			items.add("Lays Chips");
 			items.add("Doritos");
 		}
-		else if (categoryName.equal("Pet Food")){
+		else if (categoryName.equals("Pet Food")){
 			items.add("Ped Food");
 		}
-		else if (categoryName.equal("Charcoal")){
+		else if (categoryName.equals("Charcoal")){
 			items.add("Charcoal");
 		}
-		else if (categoryName.equal("Candles")){
+		else if (categoryName.equals("Candles")){
 			items.add("Candles");
 		}
-		else if (categoryName.equal("Laundry Detergent")){
+		else if (categoryName.equals("Laundry Detergent")){
 			items.add("Laundry Detergent");
 		}
-		else if (categoryName.equal("Dishwashing Detergent")){
+		else if (categoryName.equals("Dishwashing Detergent")){
 			items.add("Dishwashing Soap");
 			items.add("Sponges");
 		}
-		else if (categoryName.equal("Medicines")){
+		else if (categoryName.equals("Medicines")){
 			items.add("Antiacid");
 			items.add("Bandaids");
 			items.add("Cough Drops");
@@ -297,30 +297,30 @@ public class ListManager {
 			items.add("Pain-Reliever");
 			items.add("Rubbing Alcohol");
 		}
-		else if (categoryName.equal("Baby Products")){
+		else if (categoryName.equals("Baby Products")){
 			items.add("Baby Products");
 			items.add("Bottles");
 		}
-		else if (categoryName.equal("Deodorant")){
+		else if (categoryName.equals("Deodorant")){
 			items.add("Deodorant");
 		}
-		else if (categoryName.equal("Hair Care")){
+		else if (categoryName.equals("Hair Care")){
 			items.add("Shampoo");
 			items.add("Conditioner");
 		}
-		else if (categoryName.equal("Bar Soap")){
+		else if (categoryName.equals("Bar Soap")){
 			items.add("Bar Soap");
 			items.add("Soap");
 			items.add("Body Lotion");
 		}
-		else if (categoryName.equal("Cards")){
+		else if (categoryName.equals("Cards")){
 			items.add("Cards");
 		}
-		else if (categoryName.equal("Water")){
+		else if (categoryName.equals("Water")){
 			items.add("Bottled Water");
 			items.add("Sparkling Water");
 		}
-		else if (categoryName.equal("Cheese")){
+		else if (categoryName.equals("Cheese")){
 			items.add("Boursin");
 			items.add("Brie");
 			items.add("Cheese");
@@ -329,111 +329,111 @@ public class ListManager {
 			items.add("Cottage Cheese");
 			items.add("Cream Cheese");
 		}
-		else if (categoryName.equal("Milk")){
+		else if (categoryName.equals("Milk")){
 			items.add("Milk");
 			items.add("2 Percent Milk");
 			items.add("Skim Milk");
 			items.add("Soy Milk");
 		}
-		else if (categoryName.equal("Vitamins")){
+		else if (categoryName.equals("Vitamins")){
 			
 		}
-		else if (categoryName.equal("Frozen Breakfast")){
+		else if (categoryName.equals("Frozen Breakfast")){
 			items.add("Breakfast Sausage");
 			items.add("Waffles");
 		}
-		else if (categoryName.equal("Frozen Meats")){
+		else if (categoryName.equals("Frozen Meats")){
 			items.add("Chicken Nuggets");
 			items.add("Chicken Breasts");
 			items.add("Chicken Tenderloins");
 			items.add("Ground Beef");
 			items.add("Ground Turkey");
 		}
-		else if (categoryName.equal("Frozen Juices")){
+		else if (categoryName.equals("Frozen Juices")){
 			items.add("Orange Juice");
 			items.add("Juice");
 			items.add("Apple Juice");
 		}
-		else if (categoryName.equal("Bacon")){
+		else if (categoryName.equals("Bacon")){
 			items.add("Bacon");
 		}
-		else if (categoryName.equal("Ice Cream")){
+		else if (categoryName.equals("Ice Cream")){
 			items.add("Premium Ice Cream");
 			items.add("Simple Ice Cream");
 			items.add("Ice Cream");
 		}
-		else if (categoryName.equal("Frozen Dessert")){
+		else if (categoryName.equals("Frozen Dessert")){
 			items.add("Frozen Dessert");
 			items.add("Pie");
 			items.add("Ice Cream");
 		}
-		else if (categoryName.equal("Frozen Seafood")){
+		else if (categoryName.equals("Frozen Seafood")){
 			items.add("Flounder");
 			items.add("Mahi Mahi");
 			items.add("Tilapia");
 		}
-		else if (categoryName.equal("Frozen Potatoes")){
+		else if (categoryName.equals("Frozen Potatoes")){
 			items.add("French Fries");
 			items.add("Frozen Potatoes");
 		}
-		else if (categoryName.equal("Novelties")){
+		else if (categoryName.equals("Novelties")){
 			items.add("Novelties");
 			items.add("Paper");
-			items.add("Pencils"):
+			items.add("Pencils");
 			items.add("Notebook");
 		}
-		else if (categoryName.equal("Frozen Dinners")){
+		else if (categoryName.equals("Frozen Dinners")){
 			items.add("Hamburger Helper");
 		}
-		else if (categoryName.equal("Frozen Veggies")){
+		else if (categoryName.equals("Frozen Veggies")){
 			items.add("Frozen Veggies");
 		}
-		else if (categoryName.equal("Frozen Entrees")){
+		else if (categoryName.equals("Frozen Entrees")){
 			items.add("Frozen Entrees");
 			items.add("Hot Pockets");
 			items.add("Lean Cuisine");
 		}
-		else if (categoryName.equal("Frozen Food")){
+		else if (categoryName.equals("Frozen Food")){
 			items.add("Frozen Food");
 		}
-		else if (categoryName.equal("Frozen Pizza")){
+		else if (categoryName.equals("Frozen Pizza")){
 			items.add("Frozen Pizza");
 		}
-		else if (categoryName.equal("Fruits")){
+		else if (categoryName.equals("Fruits")){
 			items.add("Apples");
 			items.add("Avocados");
 			items.add("Bananas");
 			items.add("Berries");
-			items.add("Cherries"):
+			items.add("Cherries");
 			items.add("Grapefruit");
 			items.add("Grapes");
 			items.add("Kiwis");
 			items.add("Lemons/Limes");
 			items.add("Melon");
-			items.add("Oranges"):
+			items.add("Oranges");
 			items.add("Peaches");
 		}
-		else if (categoryName.equal("Produce")){
+		else if (categoryName.equals("Produce")){
 			items.add("Apples");
 			items.add("Avocados");
 			items.add("Bananas");
 			items.add("Berries");
-			items.add("Cherries"):
+			items.add("Cherries");
 			items.add("Grapefruit");
 			items.add("Grapes");
 			items.add("Kiwis");
 			items.add("Lemons/Limes");
 			items.add("Melon");
-			items.add("Oranges"):
+			items.add("Oranges");
 			items.add("Peaches");
 		}
-		else if (categoryName.equal("Meats")){
+		else if (categoryName.equals("Meats")){
 			items.add("Beef");
 			items.add("Chicken");
 			items.add("Fish");
 			items.add("Pork");
 		}
-		else if (categoryName.equal("Seafood")){
+		else if (categoryName.equals("Seafood")){
 			items.add("Seafood");	
 		}
 		return items;
