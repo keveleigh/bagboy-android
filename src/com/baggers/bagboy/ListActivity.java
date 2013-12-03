@@ -15,9 +15,11 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 public class ListActivity extends Activity{
-	final Spinner spinner1 = (Spinner) findViewById(R.id.categorySpinner);
-	final Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
-    public void onCreate(Bundle savedInstanceState) {
+	Spinner spinner1;
+	Spinner spinner2;
+	
+    @Override
+	public void onCreate(Bundle savedInstanceState) {
     	
         super.onCreate(savedInstanceState);
         
@@ -61,12 +63,17 @@ public class ListActivity extends Activity{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         
+        spinner1 = (Spinner) findViewById(R.id.categorySpinner);
+        spinner2 = (Spinner) findViewById(R.id.itemSpinner);
         
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadCategories());
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
         ListManager.currCategory = spinner1.getSelectedItem().toString();
         
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItemsFromCategory(ListManager.currCategory));
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter2);    
         
         spinner1.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
@@ -79,17 +86,14 @@ public class ListActivity extends Activity{
             public void onNothingSelected(AdapterView<?> parentView) {
                 ListManager.currCategory = "";
             }
-
-        });
-        
+        });  
 
         //TODO: make spinners update content based on other spinners
         
         // Populate item list view
         final ListView itemList = (ListView) findViewById(R.id.itemList);
         ArrayAdapter<String> listAdapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, ListManager.loadItemsFromList());
-        itemList.setAdapter(listAdapter);
-       
+        itemList.setAdapter(listAdapter);      
         
         Button addButton = (Button) findViewById(R.id.addToListButton);
         addButton.setOnClickListener(new View.OnClickListener(){
@@ -113,12 +117,9 @@ public class ListActivity extends Activity{
 	    return true;
 	}
 	
-	public void refreshSpinner2() {
-        
+	public void refreshSpinner2() {  
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItemsFromCategory(ListManager.currCategory));
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
-        
-	}
-    
+        spinner2.setAdapter(adapter2);    
+	}    
 }
