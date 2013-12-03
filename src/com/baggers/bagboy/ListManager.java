@@ -28,6 +28,15 @@ public class ListManager {
 		
 	}
 	
+	public static void deleteFromList(String deletedProduct) {
+		for (int i = 0 ; i < currProductList.size(); i++) {
+			if (deletedProduct.equals(currProductList.get(i))) {
+				currProductList.remove(i);
+				break;
+			}
+		}
+	}
+	
 	public static ArrayList<String> loadLists() {
 		String currUser = LoginManager.currUserEmail;
 		//gets all the lists based on the current user
@@ -114,7 +123,7 @@ public class ListManager {
 	
 	public static ArrayList<String> loadItemsFromCategory (String categoryName) {
 		//return db.loadItemsFromCategory(categoryName);
-		System.out.println(categoryName);
+		
 		ArrayList<String> items = new ArrayList<String>();
 		if (categoryName.equals("")) {
 			

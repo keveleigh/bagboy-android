@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -93,7 +94,23 @@ public class ListActivity extends Activity{
         // Populate item list view
         final ListView itemList = (ListView) findViewById(R.id.itemList);
         ArrayAdapter<String> listAdapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, ListManager.loadItemsFromList());
-        itemList.setAdapter(listAdapter);      
+        itemList.setAdapter(listAdapter); 
+        itemList.setLongClickable(true);
+        
+        itemList.setOnItemLongClickListener(new OnItemLongClickListener() {
+        
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
+				// TODO Auto-generated method stub
+				
+				System.out.println("item " + itemList.getAdapter().getItem(arg2).toString());
+				ListManager.deleteFromList(itemList.getAdapter().getItem(arg2).toString());
+				itemList.invalidateViews();
+				return false;
+			}
+        	
+        });
         
         Button addButton = (Button) findViewById(R.id.addToListButton);
         addButton.setOnClickListener(new View.OnClickListener(){
