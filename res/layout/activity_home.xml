@@ -27,6 +27,7 @@
 	    android:layout_height="wrap_content"
 	    android:layout_below="@+id/imageView1"
 	    android:layout_centerHorizontal="true"
+	    android:background="@drawable/main_border_btn_select"
 	    android:textColor="#FFFFFF"
 	    android:text="Create a List" />
 	

@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +24,25 @@ public class EndActivity extends Activity{
 	    // Sets up action bar back button
 	    ActionBar actionBar = this.getActionBar();
 	    actionBar.setDisplayHomeAsUpEnabled(true);
+	    
+	    Button retHomeBtn = (Button) findViewById(R.id.retHomeBtn);
+	    retHomeBtn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(EndActivity.this, HomeActivity.class);
+				startActivity(i);
+			}
+	    	
+	    });
        
     }
+    
+    @Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent i = new Intent(getApplicationContext(), RouteActivity.class);
+	    startActivityForResult(i, 0);
+	    return true;
+	}
     
 }

@@ -12,35 +12,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:background="@drawable/borderbtn"
+        android:background="@drawable/gray_border_btn_select"
         android:text="Kroger						1.5 mi"
-        android:textColor="#FFFFFF" />
+        android:textColor="#262829" />
 
     <Button
         android:id="@+id/publixButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:background="@drawable/borderbtn"
+        android:background="@drawable/gray_border_btn_select"
         android:text="Publix						2.3 mi"
-        android:textColor="#FFFFFF" />
+        android:textColor="#262829" />
     
 	<Button
         android:id="@+id/targetButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:background="@drawable/borderbtn"
+        android:background="@drawable/gray_border_btn_select"
         android:text="Super Target						3.5 mi"
-        android:textColor="#FFFFFF" />
+        android:textColor="#262829" />
         
 	<Button
         android:id="@+id/walmartButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:background="@drawable/borderbtn"
+        android:background="@drawable/gray_border_btn_select"
         android:text="Walmart Supercenter						5.0 mi"
-        android:textColor="#FFFFFF" />
+        android:textColor="#262829" />
 
 </LinearLayout>

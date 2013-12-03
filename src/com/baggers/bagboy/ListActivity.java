@@ -3,6 +3,8 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -132,11 +134,28 @@ public class ListActivity extends Activity{
      */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		Intent myIntent = new Intent(getApplicationContext(), HomeActivity.class);
-	    startActivityForResult(myIntent, 0);
-	    return true;
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_save:
+	            // Input save list logic here
+	        	
+	            return true;
+	        default:
+	        	// Else, back button was pressed, change activity
+	        	Intent it = new Intent(getApplicationContext(), HomeActivity.class);
+	    	    startActivityForResult(it, 0);
+	            return true;
+	    }
 	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu items for use in the action bar
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.listactivity_menu, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
 	public void refreshSpinner2() {  
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItemsFromCategory(ListManager.currCategory));
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

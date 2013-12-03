@@ -42,11 +42,12 @@ public class MapActivity extends Fragment {
 	    	gm = ((SupportMapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 			gm.setMyLocationEnabled(true);
 			
-			gm.moveCamera( CameraUpdateFactory.newLatLngZoom(new LatLng(33.7749832,-84.3966354) , 14.0f) );
+			gm.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(33.7749832,-84.3966354), 14.0f) );
 			gm.addMarker(new MarkerOptions()
 		     .position(new LatLng(33.7749832,-84.3966354))
 		     .title("Georgia Institute of Technology")
-		     .snippet("4 stores nearby"));
+		     .snippet("4 stores nearby"))
+		     .showInfoWindow();
 			
 //			// Getting LocationManager object from System Service LOCATION_SERVICE
 //	        LocationManager locationManager = (LocationManager) getActivity().getSystemService(getActivity().LOCATION_SERVICE);

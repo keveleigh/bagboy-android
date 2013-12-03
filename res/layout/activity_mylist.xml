@@ -12,17 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:textColor="#FFFFFF"
+        android:textColor="#262829"
         android:text="Grandma's Groceries"
-        android:background="@drawable/borderbtn" />
+        android:background="@drawable/gray_border_btn_select" />
 
     <Button
         android:id="@+id/shopFlaggedBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:textColor="#FFFFFF"
+        android:textColor="#262829"
         android:text="Tailgate List"
-        android:background="@drawable/borderbtn" />
+        android:background="@drawable/gray_border_btn_select" />
 
 </LinearLayout>

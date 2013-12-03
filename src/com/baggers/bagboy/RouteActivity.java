@@ -11,6 +11,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -96,5 +98,29 @@ public class RouteActivity extends FragmentActivity {
 			}
 			return tabTitle;
 		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_flag:
+	            // Input flag item logic here
+	        	
+	            return true;
+	        default:
+	        	// Else, back button was pressed, change activity
+	        	Intent it = new Intent(getApplicationContext(), HomeActivity.class);
+	    	    startActivityForResult(it, 0);
+	            return true;
+	    }
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu items for use in the action bar
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.routeactivity_menu, menu);
+		return super.onCreateOptionsMenu(menu);
 	}
 }

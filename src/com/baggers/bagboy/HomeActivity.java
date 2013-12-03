@@ -29,17 +29,16 @@ public class HomeActivity extends FragmentActivity {
 		// set default screen to login GUI
 		setContentView(R.layout.activity_home);
 
+		// Create List button functionality
 		Button createList = (Button) findViewById(R.id.createList);
-
-		createList.setOnClickListener(
-				new OnClickListener() {
-					public void onClick(View v) {
-						
-						
-						Intent i = new Intent(HomeActivity.this, ListActivity.class);
-						startActivity(i);
-					}
-				});
+		createList.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(HomeActivity.this, ListActivity.class);
+				startActivity(i);
+			}
+		});
 
 		List<Fragment> fragments = getFragments();
 		pageAdapter = new MyPageAdapter(getSupportFragmentManager(), fragments);
@@ -50,7 +49,7 @@ public class HomeActivity extends FragmentActivity {
 	private List<Fragment> getFragments() {
 		List<Fragment> fList = new ArrayList<Fragment>();
 
-		//create the fragments we want to use for display content
+		// Create fragments
 		Fragment StoreFragment = new StoreActivity();
 		Fragment MapFragment = new MapActivity();
 		Fragment MyListFragment = new MyListActivity();
@@ -62,6 +61,9 @@ public class HomeActivity extends FragmentActivity {
 		return fList;
 	}
 
+	/* 
+	 * Tabs for fragments
+	 */
 	private class MyPageAdapter extends FragmentPagerAdapter {
 
 		private List<Fragment> fragments;
