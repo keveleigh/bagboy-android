@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -58,10 +60,24 @@ public class ListActivity extends Activity{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         
-        Spinner spinner1 = (Spinner) findViewById(R.id.categorySpinner);
+        final Spinner spinner1 = (Spinner) findViewById(R.id.categorySpinner);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadCategories());
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
+       // ListManager.currCategory = spinner1.getSelectedItem().toString();
+        
+        spinner1.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+            	ListManager.currCategory = spinner1.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                ListManager.currCategory = "";
+            }
+
+        });
         
         final Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItemsFromCategory(ListManager.currCategory));

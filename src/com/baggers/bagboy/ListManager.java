@@ -7,7 +7,7 @@ public class ListManager {
 	//static String currListName;
 	static ArrayList<String> currProductList;
 	static String currStore;
-	static String currCategory;
+	static String currCategory = "";
 	static String currItem;
 	static ArrayList<String> listCollection;
 	static DatabaseConnection db = new DatabaseConnection();
@@ -115,7 +115,10 @@ public class ListManager {
 	public static ArrayList<String> loadItemsFromCategory (String categoryName) {
 		//return db.loadItemsFromCategory(categoryName);
 		ArrayList<String> items = new ArrayList<String>();
-		if (categoryName.equals("Wine")){
+		if (categoryName.equals("")) {
+			
+		}
+		else if (categoryName.equals("Wine")){
 			items.add("Cabernet");
 			items.add("White Wine");
 			items.add("Dessert Wine");
