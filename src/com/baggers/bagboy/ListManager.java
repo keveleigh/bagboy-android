@@ -114,6 +114,7 @@ public class ListManager {
 	
 	public static ArrayList<String> loadItemsFromCategory (String categoryName) {
 		//return db.loadItemsFromCategory(categoryName);
+		System.out.println(categoryName);
 		ArrayList<String> items = new ArrayList<String>();
 		if (categoryName.equals("")) {
 			

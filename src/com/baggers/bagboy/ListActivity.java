@@ -15,7 +15,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 public class ListActivity extends Activity{
-
+	final Spinner spinner1 = (Spinner) findViewById(R.id.categorySpinner);
+	final Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
     public void onCreate(Bundle savedInstanceState) {
     	
         super.onCreate(savedInstanceState);
@@ -60,16 +61,18 @@ public class ListActivity extends Activity{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         
-        final Spinner spinner1 = (Spinner) findViewById(R.id.categorySpinner);
+        
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadCategories());
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
         ListManager.currCategory = spinner1.getSelectedItem().toString();
         
+        
         spinner1.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
             	ListManager.currCategory = spinner1.getSelectedItem().toString();
+            	refreshSpinner2();
             }
 
             @Override
@@ -79,11 +82,7 @@ public class ListActivity extends Activity{
 
         });
         
-        final Spinner spinner2 = (Spinner) findViewById(R.id.itemSpinner);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItemsFromCategory(ListManager.currCategory));
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
-        
+
         //TODO: make spinners update content based on other spinners
         
         // Populate item list view
@@ -112,6 +111,14 @@ public class ListActivity extends Activity{
 		Intent myIntent = new Intent(getApplicationContext(), HomeActivity.class);
 	    startActivityForResult(myIntent, 0);
 	    return true;
+	}
+	
+	public void refreshSpinner2() {
+        
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadItemsFromCategory(ListManager.currCategory));
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter2);
+        
 	}
     
 }
