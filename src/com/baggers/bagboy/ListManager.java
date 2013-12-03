@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ListManager {
 
 	//static String currListName;
-	static ArrayList<String> currProductList;
+	static ArrayList<String> currProductList = new ArrayList<String>();
 	static String currStore;
 	static String currCategory = "";
 	static String currItem;
