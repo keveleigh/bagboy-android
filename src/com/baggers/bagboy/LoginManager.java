@@ -1,5 +1,7 @@
 package com.baggers.bagboy;
 
+import java.util.ArrayList;
+
 public class LoginManager {
 	
 	static String currUserEmail;
