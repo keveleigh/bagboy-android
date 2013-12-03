@@ -29,7 +29,6 @@ public class HomeActivity extends FragmentActivity {
 		// set default screen to login GUI
 		setContentView(R.layout.activity_home);
 
-		//need to figure out what buttons go on the home screen 
 		Button createList = (Button) findViewById(R.id.createList);
 
 		createList.setOnClickListener(
