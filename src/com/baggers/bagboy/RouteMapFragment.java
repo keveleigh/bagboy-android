@@ -20,11 +20,13 @@ public class RouteMapFragment extends Fragment {
 	ArrayList<String> itemsList;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
-		View V = inflater.inflate(R.layout.fragment_route_map, container, false);
+		View V = inflater
+				.inflate(R.layout.fragment_route_map, container, false);
 
-		//loads all the lists
+		// loads all the lists
 		itemsList = ListManager.loadItemsFromList();
 
 		cxt = getActivity();
@@ -46,7 +48,7 @@ public class RouteMapFragment extends Fragment {
 			tv.setTextSize(20);
 			tv.setBackgroundColor(Color.rgb(211, 211, 211));
 			tv.setGravity(Gravity.CENTER_VERTICAL);
-			collection.addView(tv,0);
+			collection.addView(tv, 0);
 
 			return tv;
 		}
@@ -58,7 +60,7 @@ public class RouteMapFragment extends Fragment {
 
 		@Override
 		public boolean isViewFromObject(View view, Object object) {
-			return (view==object);
+			return (view == object);
 		}
 
 		@Override
