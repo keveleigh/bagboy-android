@@ -64,7 +64,7 @@ public class ListActivity extends Activity{
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item, ListManager.loadCategories());
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
-       // ListManager.currCategory = spinner1.getSelectedItem().toString();
+        ListManager.currCategory = spinner1.getSelectedItem().toString();
         
         spinner1.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
