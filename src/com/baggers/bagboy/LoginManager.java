@@ -1,18 +1,19 @@
 package com.baggers.bagboy;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginManager {
 	
 	static String currUserEmail;
 	static String currUserPassword;
 	static DatabaseConnection db = new DatabaseConnection();
-	static ArrayList<String> registeredUsers;
+	static Map<String, String> registeredUsers = new HashMap<String, String>();
 	//the error message to be returned
 	static String error = "";
 	
 	//variable to say that there is a current user logged into the app
-	private static boolean loggedIn = false;
+	//private static boolean loggedIn = false;
 	
 	public LoginManager() {
 
@@ -21,20 +22,19 @@ public class LoginManager {
 	public static boolean checkLogin(String username, String password) {
 		// admin log in
 		if(username.equals("admin") && password.equals("thebaggers")){
-			loggedIn = true;
-			return loggedIn;
+			return true;
 		}
 		
-		//tries to login with the database, 
-		//loggedIn = db.checkLogin(username, password);
-		
-		if (loggedIn) {
-			currUserEmail = username;
-			currUserPassword = password;
+		if (registeredUsers.containsKey(username)) {
+			if (registeredUsers.get(username).equals(password)) 
+				return true;
+				
 		}
+		
+	
 		
 		error = "Invalid email or password";
-		return loggedIn;
+		return false;
 
 	}
 
@@ -55,31 +55,16 @@ public class LoginManager {
 		if (password.length() < 5) {
 			error = "Invalid password length (use 6 or more characters)";
 			return false;
-		}
-		//if those are good, call database register user 
-		
+		}		
 		//check to see if that user is already registered
-		//if (db.checkEmail(username)) {
-		//	error = "Email address already registered";
-		//	return false;
-		//}
-		if (registeredUsers.contains(username)){
+		if (registeredUsers.containsKey(username)){
 			error = "Email address already registered";
 			return false;
 		}
 		
-		//if everything is good, register the user, set the current user information
-		//loggedIn = db.registerUser(username, password);
-		registeredUsers.add("username");
-		if (loggedIn) {
-			currUserEmail = username;
-			currUserPassword = password;
-		}
-		else {
-			error = "Registration failed";
-		}
-		
-		return loggedIn;
+		//if all that is good register the user 
+		registeredUsers.put(username, password);
+		return true;
 	
 		
 		//to make the compiler happy until we finish implementation
