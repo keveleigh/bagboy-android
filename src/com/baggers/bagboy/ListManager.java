@@ -49,8 +49,9 @@ public class ListManager {
 		//a bunch of statements adding strings to the categories list 
 		stores.add("Publix");
 		stores.add("Kroger");
-		stores.add("Walmart Supercenter");
 		stores.add("Super Target");
+		stores.add("Walmart Supercenter");
+		
 		return stores; 
 	}
 	

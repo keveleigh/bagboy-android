@@ -26,6 +26,43 @@ public class StoreActivity extends Fragment {
 
 			@Override
 			public void onClick(View arg0) {
+				ListManager.currStore = "Kroger";
+				Intent i = new Intent((HomeActivity)getActivity(), ListActivity.class);
+            	getActivity().startActivity(i); 
+			}
+			
+		});
+
+		Button publixBtn = (Button) view.findViewById(R.id.publixButton);
+		publixBtn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				ListManager.currStore = "Publix";
+				Intent i = new Intent((HomeActivity)getActivity(), ListActivity.class);
+            	getActivity().startActivity(i); 
+			}
+			
+		});
+		
+		Button targetBtn = (Button) view.findViewById(R.id.targetButton);
+		targetBtn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				ListManager.currStore = "Super Target";
+				Intent i = new Intent((HomeActivity)getActivity(), ListActivity.class);
+            	getActivity().startActivity(i); 
+			}
+			
+		});
+		
+		Button walmartBtn = (Button) view.findViewById(R.id.walmartButton);
+		walmartBtn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				ListManager.currStore = "Walmart Supercenter";
 				Intent i = new Intent((HomeActivity)getActivity(), ListActivity.class);
             	getActivity().startActivity(i); 
 			}

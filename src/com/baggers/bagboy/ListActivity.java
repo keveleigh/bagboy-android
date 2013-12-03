@@ -64,6 +64,9 @@ public class ListActivity extends Activity{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         
+        //set the spinner to the value of the current store 
+        spinner.setSelection(adapter.getPosition(ListManager.currStore));
+        
         spinner1 = (Spinner) findViewById(R.id.categorySpinner);
         spinner2 = (Spinner) findViewById(R.id.itemSpinner);
         
