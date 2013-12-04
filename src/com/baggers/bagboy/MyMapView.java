@@ -21,6 +21,8 @@ public class MyMapView extends View {
 	int fy = 450;
 	int ly = 418;
 	int ty = 232;
+	int realY;
+	boolean top = false;
 	int dim = 18;
 	RectF d;
 
@@ -66,7 +68,9 @@ public class MyMapView extends View {
 
 	@Override
 	protected void onDraw(Canvas canvas) {
-		for (int i = 0; i < 13; i++)
+		realY = fy;
+		top = false;
+		for (int i = 0; i < 8; i++)
 		{
 			if(aisles.contains(i))
 			{
@@ -77,14 +81,34 @@ public class MyMapView extends View {
 				if(i == 0)
 				{
 					canvas.drawRect(d, p);
+					canvas.drawLine(x[i] + dim/2, y[i], x[i] + dim/2, realY, p);
+					canvas.drawLine(x[i] + dim/2, realY, x[i+1] + dim/2, realY, p);
 				}
 				else
 				{
 					canvas.drawOval(d, p);
+					if(top)
+					{
+						canvas.drawLine(x[i] + dim/2, realY, x[i] + dim/2, y[i], p);
+						realY = fy;
+						top = !top;
+						canvas.drawLine(x[i] + dim/2, y[i] + dim, x[i] + dim/2, realY, p);
+					}
+					else
+					{
+						canvas.drawLine(x[i] + dim/2, realY, x[i] + dim/2, y[i] + dim, p);
+						realY = ty;
+						top = !top;
+						canvas.drawLine(x[i] + dim/2, y[i], x[i] + dim/2, realY, p);
+					}
+					canvas.drawLine(x[i] + dim/2, realY, x[i+1] + dim/2, realY, p);
 				}
 			}
+			else
+			{
+				canvas.drawLine(x[i] + dim/2, realY, x[i+1] + dim/2, realY, p);
+			}
 		}
-		canvas.drawLine(0, 0, 20, 20, p);
 	}
 
 	private HashSet<Integer> getAisles() {
