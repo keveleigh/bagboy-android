@@ -48,7 +48,19 @@ public class RouteMapFragment extends Fragment {
 		@Override
 		public Object instantiateItem(ViewGroup collection, int position) {
 			TextView tv = new TextView(cxt);
-			tv.setText("     " + itemsList.get(position) + "   -   Aisle " + ListManager.loadAislesFromProductName(itemsList.get(position)));
+			int aisle = ListManager.loadAislesFromProductName(itemsList.get(position));
+			if(aisle == 13)
+			{
+				tv.setText("     " + itemsList.get(position) + "   -   Meat Dept.");
+			}
+			else if(aisle == 14)
+			{
+				tv.setText("     " + itemsList.get(position) + "   -   Produce");
+			}
+			else
+			{
+				tv.setText("     " + itemsList.get(position) + "   -   Aisle " + aisle);
+			}
 			tv.setTextColor(Color.BLACK);
 			tv.setTextSize(20);
 			tv.setBackgroundColor(Color.rgb(211, 211, 211));

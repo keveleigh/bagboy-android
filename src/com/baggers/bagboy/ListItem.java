@@ -21,6 +21,14 @@ public class ListItem {
 	@Override
 	public String toString()
 	{
+		if(aisle == 13)
+		{
+			return name + "   -   Meat";
+		}
+		if(aisle == 14)
+		{
+			return name + "   -   Produce";
+		}
 		return name + "   -   Aisle " + Integer.toString(aisle);
 	}
 }

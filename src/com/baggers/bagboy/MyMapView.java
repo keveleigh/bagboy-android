@@ -16,8 +16,8 @@ public class MyMapView extends View {
 	ArrayList<String> items;
 	HashSet<Integer> aisles;
 	Paint p = new Paint();
-	int[] x = new int[18];
-	int[] y = new int[18];
+	int[] x = new int[15];
+	int[] y = new int[15];
 	int fy = 450;
 	int ly = 418;
 	int ty = 232;
@@ -55,6 +55,10 @@ public class MyMapView extends View {
 		y[11] = 125;
 		x[12] = 378;
 		y[12] = 125;
+		x[13] = 273;
+		y[13] = 34;
+		x[14] = 504;
+		y[14] = 121;
 		
 		p.setColor(0xff29348D);
 		p.setStyle(Paint.Style.STROKE);
@@ -84,6 +88,25 @@ public class MyMapView extends View {
 					canvas.drawLine(x[i] + dim/2, y[i], x[i] + dim/2, realY, p);
 					canvas.drawLine(x[i] + dim/2, realY, x[i+1] + dim/2, realY, p);
 				}
+				else if(i == 7)
+				{
+					canvas.drawOval(d, p);
+					if(top)
+					{
+						canvas.drawLine(x[i] + dim/2, realY, x[i] + dim/2, y[i], p);
+						realY = fy;
+						top = !top;
+						canvas.drawLine(x[i] + dim/2, y[i] + dim, x[i] + dim/2, realY, p);
+					}
+					else
+					{
+						canvas.drawLine(x[i] + dim/2, realY, x[i] + dim/2, y[i] + dim, p);
+						realY = ty;
+						top = !top;
+						canvas.drawLine(x[i] + dim/2, y[i], x[i] + dim/2, realY, p);
+					}
+					canvas.drawLine(x[i] + dim/2, realY, 70, realY, p);
+				}
 				else
 				{
 					canvas.drawOval(d, p);
@@ -106,9 +129,210 @@ public class MyMapView extends View {
 			}
 			else
 			{
-				canvas.drawLine(x[i] + dim/2, realY, x[i+1] + dim/2, realY, p);
+				if(i == 7)
+				{
+					canvas.drawLine(x[i] + dim/2, realY, 70, realY, p);
+				}
+				else
+				{
+					canvas.drawLine(x[i] + dim/2, realY, x[i+1] + dim/2, realY, p);
+				}
 			}
 		}
+		fy = 210;
+		ty = 60;
+		if(aisles.contains(8))
+		{
+			d.bottom = y[8] + dim;
+			d.left = x[8];
+			d.right = x[8] + dim;
+			d.top = y[8];
+			canvas.drawOval(d, p);
+			if(top)
+			{
+				canvas.drawLine(70, realY, x[8] + dim/2, y[8], p);
+			}
+			else
+			{
+				canvas.drawLine(70, realY, x[8] + dim/2, y[8] + dim, p);
+			}
+			
+			if(aisles.contains(9))
+			{
+				d.bottom = y[9] + dim;
+				d.left = x[9];
+				d.right = x[9] + dim;
+				d.top = y[9];
+				canvas.drawOval(d, p);
+				canvas.drawLine(x[8] + dim/2, y[8], x[9] + dim/2, y[9] + dim, p);
+				canvas.drawLine(x[9] + dim/2, y[9], 70, ty, p);
+				realY = ty;
+				top = true;
+			}
+			else
+			{
+				canvas.drawLine(x[8] + dim/2, y[8], 66, fy, p);
+				realY = fy;
+				top = false;
+			}
+		}
+		else if(aisles.contains(9))
+		{
+			d.bottom = y[9] + dim;
+			d.left = x[9];
+			d.right = x[9] + dim;
+			d.top = y[9];
+			canvas.drawOval(d, p);
+			canvas.drawLine(70, realY, x[9] + dim/2, y[9] + dim, p);
+			canvas.drawLine(x[9] + dim/2, y[9], 70, ty, p);
+			realY = ty;
+			top = true;
+		}
+		else
+		{
+			canvas.drawLine(70, realY, 70, fy, p);
+			realY = fy;
+			top = false;
+			
+//			if(aisles.contains(13))
+//			{
+//				canvas.drawLine(70, realY, 70, ty, p);
+//				realY = ty;
+//				top = true;
+//			}
+//			else
+//			{
+//				canvas.drawLine(70, realY, 70, fy, p);
+//				realY = fy;
+//				top = false;
+//			}
+		}
+		canvas.drawLine(70, realY, x[10] + dim/2, realY, p);
+		
+		if(aisles.contains(10))
+		{
+			d.bottom = y[10] + dim;
+			d.left = x[10];
+			d.right = x[10] + dim;
+			d.top = y[10];
+			canvas.drawOval(d, p);
+			if(top)
+			{
+				canvas.drawLine(x[10] + dim/2, realY, x[10] + dim/2, y[10], p);
+				realY = fy;
+				top = !top;
+				canvas.drawLine(x[10] + dim/2, y[10] + dim, x[10] + dim/2, realY, p);
+			}
+			else
+			{
+				canvas.drawLine(x[10] + dim/2, realY, x[10] + dim/2, y[10] + dim, p);
+				realY = ty;
+				top = !top;
+				canvas.drawLine(x[10] + dim/2, y[10], x[10] + dim/2, realY, p);
+			}
+		}
+		canvas.drawLine(x[10] + dim/2, realY, x[10+1] + dim/2, realY, p);
+		
+		if(aisles.contains(11))
+		{
+			d.bottom = y[11] + dim;
+			d.left = x[11];
+			d.right = x[11] + dim;
+			d.top = y[11];
+			canvas.drawOval(d, p);
+			if(top)
+			{
+				canvas.drawLine(x[11] + dim/2, realY, x[11] + dim/2, y[11], p);
+				if(!aisles.contains(13))
+				{
+					realY = fy;
+					top = !top;
+					canvas.drawLine(x[11] + dim/2, y[11] + dim, x[11] + dim/2, realY, p);
+				}
+			}
+			else
+			{
+				canvas.drawLine(x[11] + dim/2, realY, x[11] + dim/2, y[11] + dim, p);
+				if(!aisles.contains(13))
+				{
+					realY = ty;
+					top = !top;
+					canvas.drawLine(x[11] + dim/2, y[11], x[11] + dim/2, realY, p);
+				}
+			}
+		}
+		if(aisles.contains(13))
+		{
+			d.bottom = y[13] + 20;
+			d.left = x[13];
+			d.right = x[13] + 70;
+			d.top = y[13];
+			canvas.drawRect(d, p);
+			if(aisles.contains(11))
+			{
+				canvas.drawLine(x[11] + dim/2, y[11], x[13] + 35, y[13] + 20, p);
+			}
+			else
+			{
+				canvas.drawLine(x[11] + dim/2, realY, x[13] + 35, y[13] + 20, p);
+			}
+			if(!top)
+			{
+				realY = ty;
+				top = !top;
+			}
+			canvas.drawLine(x[13] + 35, y[13] + 20, x[12] + dim/2, realY, p);
+		}
+		else
+		{
+			canvas.drawLine(x[11] + dim/2, realY, x[12] + dim/2, realY, p);
+		}
+		
+		if(aisles.contains(12))
+		{
+			d.bottom = y[12] + dim;
+			d.left = x[12];
+			d.right = x[12] + dim;
+			d.top = y[12];
+			canvas.drawOval(d, p);
+			if(top)
+			{
+				canvas.drawLine(x[12] + dim/2, realY, x[12] + dim/2, y[12], p);
+				realY = fy;
+				top = !top;
+				canvas.drawLine(x[12] + dim/2, y[12] + dim, x[12] + dim/2, realY, p);
+			}
+			else
+			{
+				canvas.drawLine(x[12] + dim/2, realY, x[12] + dim/2, y[12] + dim, p);
+				realY = ty;
+				top = !top;
+				canvas.drawLine(x[12] + dim/2, y[12], x[12] + dim/2, realY, p);
+			}
+		}
+		canvas.drawLine(x[12] + dim/2, realY, x[14] + 52, realY, p);
+		
+		if(aisles.contains(14))
+		{
+			d.bottom = y[14] + 22;
+			d.left = x[14];
+			d.right = x[14] + 104;
+			d.top = y[14];
+			canvas.drawRect(d, p);
+			if(!top)
+			{
+				canvas.drawLine(x[14] + 52, realY, x[14] + 52, y[14] + 22, p);
+			}
+			else
+			{
+				canvas.drawLine(x[14] + 52, realY, x[14] + 52, y[14], p);
+			}
+			
+		}
+		
+		fy = 450;
+		ly = 418;
+		ty = 232;
 	}
 
 	private HashSet<Integer> getAisles() {
