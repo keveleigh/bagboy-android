@@ -23,7 +23,7 @@ public class MyListActivity extends Fragment {
 		lists = ListManager.loadLists();
 		
 		View V = inflater.inflate(R.layout.activity_mylist, container, false);
-		final ListView listList = (ListView) V.findViewById(R.id.listList);
+		/*final ListView listList = (ListView) V.findViewById(R.id.listList);
        
         ArrayAdapter<String> listAdapter = new ArrayAdapter<String> (getActivity(), android.R.layout.simple_list_item_1, lists);
         		 
@@ -52,7 +52,7 @@ public class MyListActivity extends Fragment {
 			}
         	
         });
-
+*/
 		// Inflate the layout for this fragment
 		return V;
 	}
