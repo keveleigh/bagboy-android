@@ -1,6 +1,8 @@
 package com.baggers.bagboy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ListManager {
 
@@ -9,17 +11,17 @@ public class ListManager {
 	static String currStore;
 	static String currCategory = "";
 	static String currItem;
-	static ArrayList<String> listCollection;
+	static Map<String, ArrayList<String>> listCollection = new HashMap<String, ArrayList<String>>();
 	static DatabaseConnection db = new DatabaseConnection();
 	
 	public ListManager() {
+		
 		
 	}
 	
 	public static void createList(String listName) {
 		currProductList = new ArrayList<String>();
-		listCollection.addAll(currProductList);
-		//db.createList(LoginManager.currUserEmail, listName);
+		listCollection.put(listName, currProductList);
 	}
 	
 	
@@ -38,9 +40,20 @@ public class ListManager {
 	}
 	
 	public static ArrayList<String> loadLists() {
-		String currUser = LoginManager.currUserEmail;
-		//gets all the lists based on the current user
-		return listCollection;
+		
+		ArrayList<String> tailgateList = new ArrayList<String>();
+		tailgateList.add("Ground Beef");
+		tailgateList.add("Potato Chips");
+		listCollection.put("Tailgate List", tailgateList);
+		
+		ArrayList<String> listNames = new ArrayList<String>();
+		//go through list collection and get all names
+		listNames.addAll(listCollection.keySet());
+		/*System.out.println(listNames.size());
+		 for (int i = 0; i < listNames.size(); i++) {
+	        	System.out.println(listNames.get(i));
+	        }*/
+		return listNames;
 	}
 	
 	public static ArrayList<String> loadStores() {
@@ -53,6 +66,10 @@ public class ListManager {
 		stores.add("Walmart Supercenter");
 		
 		return stores; 
+	}
+	
+	public static void saveList(String listName) {
+		
 	}
 	
 	public static ArrayList<String> loadCategories() {

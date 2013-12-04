@@ -108,8 +108,7 @@ public class ListActivity extends Activity{
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				// TODO Auto-generated method stub
-				
-				System.out.println("item " + itemList.getAdapter().getItem(arg2).toString());
+
 				ListManager.deleteFromList(itemList.getAdapter().getItem(arg2).toString());
 				itemList.invalidateViews();
 				return false;
@@ -137,7 +136,8 @@ public class ListActivity extends Activity{
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	        case R.id.action_save:
-	            // Input save list logic here
+	            ListManager.saveList("My current list");
+	            //need to add a pop up dialog with list name?
 	        	
 	            return true;
 	        default:

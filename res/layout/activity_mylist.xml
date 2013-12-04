@@ -6,7 +6,7 @@
     android:background="#29348D" >
 
     <!-- this will be the my list screen -->
-
+<!--  
     <Button
         android:id="@+id/finishButton"
         android:layout_width="match_parent"
@@ -24,5 +24,16 @@
         android:textColor="#262829"
         android:text="Tailgate List"
         android:background="@drawable/gray_border_btn_select" />
+ -->
+ 
+     <ListView
+        android:id="@+id/listList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true" >
+
+    </ListView>
 
 </LinearLayout>
