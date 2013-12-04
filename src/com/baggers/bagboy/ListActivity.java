@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class ListActivity extends Activity{
 	Spinner spinner1;
@@ -136,7 +137,7 @@ public class ListActivity extends Activity{
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	        case R.id.action_save:
-	            ListManager.saveList("My current list");
+	        	Toast.makeText(ListActivity.this, "Your list was saved", Toast.LENGTH_LONG).show();
 	            //need to add a pop up dialog with list name?
 	        	
 	            return true;

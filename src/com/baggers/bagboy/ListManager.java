@@ -30,6 +30,10 @@ public class ListManager {
 		
 	}
 	
+	public static void delete (String listName) {
+		listCollection.remove(listName);
+	}
+	
 	public static void deleteFromList(String deletedProduct) {
 		for (int i = 0 ; i < currProductList.size(); i++) {
 			if (deletedProduct.equals(currProductList.get(i))) {

@@ -2,15 +2,17 @@ package com.baggers.bagboy;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemLongClickListener;
 
 public class MyListActivity extends Fragment {
 	ArrayList<String> lists;
@@ -34,17 +36,24 @@ public class MyListActivity extends Fragment {
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				
-				
-				System.out.println("item " + listList.getAdapter().getItem(arg2).toString());
-				ListManager.deleteFromList(listList.getAdapter().getItem(arg2).toString());
+				ListManager.delete((listList.getAdapter().getItem(arg2).toString()));
 				listList.invalidateViews();
 				return false;
 			}
         	
         });
 		
+        listList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				
+			}
+        	
+        });
 
 		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.activity_mylist, container, false);
+		return V;
 	}
 }
