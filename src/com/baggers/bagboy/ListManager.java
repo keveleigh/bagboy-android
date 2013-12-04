@@ -1,6 +1,7 @@
 package com.baggers.bagboy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -136,6 +137,7 @@ public class ListManager {
 		categories.add("Meats");
 		categories.add("Seafood");
 		categories.add("Produce");
+		Collections.sort(categories, String.CASE_INSENSITIVE_ORDER);
 		return categories;
 	}
 	
@@ -467,6 +469,7 @@ public class ListManager {
 		else if (categoryName.equals("Seafood")){
 			items.add("Seafood");	
 		}
+		Collections.sort(items, String.CASE_INSENSITIVE_ORDER);
 		return items;
 	}
 		public static String getCategory(String productName) {
@@ -812,13 +815,13 @@ public class ListManager {
 		} else if (categoryName.equals("Frozen Pizza")) {
 			aisle = 12;
 		} else if (categoryName.equals("Fruits")) {
-			aisle = 16;
+			aisle = 14;
 		} else if (categoryName.equals("Produce")) {
-			aisle = 16;
+			aisle = 14;
 		} else if (categoryName.equals("Meats")) {
 			aisle = 13;
 		} else if (categoryName.equals("Seafood")) {
-			aisle = 14;
+			aisle = 13;
 		}
 		return aisle;
 	}

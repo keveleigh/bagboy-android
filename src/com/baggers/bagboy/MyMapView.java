@@ -1,49 +1,97 @@
 package com.baggers.bagboy;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
 public class MyMapView extends View {
-	private ShapeDrawable mDrawable;
 	Bitmap map;
 	ArrayList<String> items;
+	HashSet<Integer> aisles;
+	Paint p = new Paint();
 	int[] x = new int[18];
 	int[] y = new int[18];
+	int fy = 450;
+	int ly = 418;
+	int ty = 232;
+	int dim = 18;
+	RectF d;
 
 	public MyMapView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-
+		
+		x[0] = 710;
+		y[0] = 530;
+		x[1] = 566;
+		y[1] = 318;
+		x[2] = 508;
+		y[2] = 318;
 		x[3] = 427;
 		y[3] = 318;
+		x[4] = 350;
+		y[4] = 318;
+		x[5] = 272;
+		y[5] = 318;
+		x[6] = 195;
+		y[6] = 318;
+		x[7] = 114;
+		y[7] = 318;
+		x[8] = 37;
+		y[8] = 297;
+		x[9] = 46;
+		y[9] = 124;
+		x[10] = 159;
+		y[10] = 125;
+		x[11] = 281;
+		y[11] = 125;
+		x[12] = 378;
+		y[12] = 125;
+		
+		p.setColor(0xff29348D);
+		p.setStyle(Paint.Style.STROKE);
+		p.setStrokeWidth(3);
+		
+		d = new RectF(x[0], y[0], x[0] + dim, y[0] + dim);
 
-		int dim = 18;
 		items = ListManager.loadItemsFromList();
-
-		mDrawable = new ShapeDrawable(new OvalShape());
-		mDrawable.getPaint().setColor(0xff74AC23);
-		mDrawable.getPaint().setStyle(Paint.Style.STROKE);
-		mDrawable.getPaint().setStrokeWidth(2);
-		mDrawable.setBounds(x[3], y[3], x[3] + dim, y[3] + dim);
+		aisles = getAisles();
 	}
 
 	@Override
 	protected void onDraw(Canvas canvas) {
-		// canvas.drawBitmap(map, 0, 0, null);
-		mDrawable.draw(canvas);
+		for (int i = 0; i < 13; i++)
+		{
+			if(aisles.contains(i))
+			{
+				d.bottom = y[i] + dim;
+				d.left = x[i];
+				d.right = x[i] + dim;
+				d.top = y[i];
+				if(i == 0)
+				{
+					canvas.drawRect(d, p);
+				}
+				else
+				{
+					canvas.drawOval(d, p);
+				}
+			}
+		}
+		canvas.drawLine(0, 0, 20, 20, p);
 	}
 
-	private ArrayList<String> getAisles() {
-		ArrayList<String> aisles = new ArrayList<String>();
+	private HashSet<Integer> getAisles() {
+		HashSet<Integer> aisles = new HashSet<Integer>();
+		aisles.add(0);
 		for (String item : items) {
-			aisles.add(item);
+			aisles.add(ListManager.loadAislesFromProductName(item));
 		}
 		return aisles;
 	}
