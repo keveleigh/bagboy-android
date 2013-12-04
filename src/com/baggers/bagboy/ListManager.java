@@ -17,7 +17,6 @@ public class ListManager {
 	
 	public ListManager() {
 		
-		
 	}
 	
 	public static void createList(String listName) {
@@ -541,7 +540,7 @@ public class ListManager {
 			category = "Cake Mix";
 		} else if (productName.equals("Sugar")) {
 			category = "Sugar";
-		} else if (productName.equals("Soup")) {
+		} else if (productName.equals("Soup") | productName.equals("Tomato Soup")) {
 			category = "Soup";
 		} else if (productName.equals("Pickles") | productName.equals("Olives")) {
 			category = "Pickles/Olives";

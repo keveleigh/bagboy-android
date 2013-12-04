@@ -1,6 +1,8 @@
 package com.baggers.bagboy;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -19,6 +21,7 @@ public class RouteMapFragment extends Fragment {
 	private Context cxt;
 	ArrayList<String> itemsList;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -28,6 +31,8 @@ public class RouteMapFragment extends Fragment {
 
 		// loads all the lists
 		itemsList = ListManager.loadItemsFromList();
+		itemsList = (ArrayList<String>) itemsList.clone();
+		Collections.sort(itemsList, new CustomComparator());
 
 		cxt = getActivity();
 
@@ -43,7 +48,7 @@ public class RouteMapFragment extends Fragment {
 		@Override
 		public Object instantiateItem(ViewGroup collection, int position) {
 			TextView tv = new TextView(cxt);
-			tv.setText("     " + itemsList.get(position));
+			tv.setText("     " + itemsList.get(position) + "   -   Aisle " + ListManager.loadAislesFromProductName(itemsList.get(position)));
 			tv.setTextColor(Color.BLACK);
 			tv.setTextSize(20);
 			tv.setBackgroundColor(Color.rgb(211, 211, 211));
@@ -66,6 +71,13 @@ public class RouteMapFragment extends Fragment {
 		@Override
 		public int getCount() {
 			return itemsList.size();
+		}
+	}
+	
+	public class CustomComparator implements Comparator<String> {
+		@Override
+		public int compare(String lhs, String rhs) {
+			return ((Integer)(ListManager.loadAislesFromProductName(lhs))).compareTo(((Integer)(ListManager.loadAislesFromProductName(rhs))));
 		}
 	}
 }
